@@ -1,0 +1,43 @@
+button {
+    border: 1px solid #64ffDA;
+    border-radius: .3em;
+    padding: .7rem 1rem;
+    margin: 0;
+    background: transparent;
+    color: #64ffDA;
+    line-height: 14px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover,
+button:focus {
+    background: rgba(100, 255, 218, .12);
+    
+}
+
+button:focus {
+    outline: none;
+    outline-offset: -4px;
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+.button {
+    font-family: 'Source Code Pro', sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    align-self: flex-start;
+    margin-top: 1.5em;
+    display: flex;
+    align-items: flex-start;
+    align-self: flex-start;
+    align-content: flex-start;
+    justify-content: flex-start;
+}

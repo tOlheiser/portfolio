@@ -1,32 +1,31 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
+import navLogo from "../assets/navLogo.svg"
+import style from "../pages/header.module.css"
+import Button from "./button"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
+const Header = () => ( // removed siteTitle props
+  <header className={style.headerDiv}>
+    
+    {/* Logo Container */}
+    <div className={style.logo}> 
+        <Link to="/">
+          <img src={navLogo} alt="Tanner Olheiser's Logo" height="60px" />
         </Link>
-      </h1>
+    </div>
+
+    {/* Link Container */}
+    <div className={style.linkDiv}>
+      <ul className={style.child}>
+        <li>Work</li>
+        <li>Skills</li>
+        <li>About</li>
+        <li>Contact</li>
+        <li>
+          <Button content="Resume" />
+        </li>
+      </ul>
     </div>
   </header>
 )

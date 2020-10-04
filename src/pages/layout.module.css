@@ -1,0 +1,22 @@
+body {
+    background-color: #2C2A3C;
+}
+
+.landingPageContainer {
+    height: 100vh;
+    background-color: #2C2A3C;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+.pageContainer { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.center {
+    align-items: center;
+}

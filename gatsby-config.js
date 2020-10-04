@@ -27,6 +27,14 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
+      options: {
+        google: {
+          families: ['Source Sans Pro', 'Source Code Pro', 'PT Mono', 'Space Mono', 'Roboto Mono', 'Overpass Mono', 'Inconsolata', 'Cousine', 'IBM Plex Mono', 'Oxygen Mono']
+        }
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
