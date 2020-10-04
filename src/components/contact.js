@@ -13,17 +13,7 @@ const Contact = () => (
             <p>I'd be happy to discuss what I can do for you.</p>
             <Button content="Say Hello"/>
         </div>
-        <div className={style.workSection}>{/* Work section */}
-            <div className={style.cardContainer}>{/* Project Card Container */}
-                <div className={style.projectPhoto}></div>
-                <div className={style.projectDescription}></div>
-            </div>
-
-            <div className={style.cardContainer}>{/* Project Card Container */}
-                <div className={style.projectPhoto}></div>
-                <div className={style.projectDescription}></div>
-            </div>
-        </div>
+        
     </div>
 )
 
