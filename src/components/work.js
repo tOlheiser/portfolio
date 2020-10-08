@@ -30,27 +30,6 @@ const Work = () => (
                 <div className={style.projectPhoto}></div>
                 <div className={style.projectDescription}></div>
             </div>
-
-            <div className={style.cardContainer}>{/* Project Card Container */}
-                <div className={style.projectPhoto}></div>
-                <div className={style.projectDescription}></div>
-            </div>
-            <div className={style.cardContainer}>{/* Project Card Container */}
-                <div className={style.projectPhoto}></div>
-                <div className={style.projectDescription}></div>
-            </div>
-            <div className={style.cardContainer}>{/* Project Card Container */}
-                <div className={style.projectPhoto}></div>
-                <div className={style.projectDescription}></div>
-            </div>
-            <div className={style.cardContainer}>{/* Project Card Container */}
-                <div className={style.projectPhoto}></div>
-                <div className={style.projectDescription}></div>
-            </div>
-            <div className={style.cardContainer}>{/* Project Card Container */}
-                <div className={style.projectPhoto}></div>
-                <div className={style.projectDescription}></div>
-            </div>
         </div>
     </div>
 )

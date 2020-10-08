@@ -1,9 +1,22 @@
 import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
 import navLogo from "../assets/navLogo.svg"
 import style from "../pages/header.module.css"
 import Button from "./button"
+
+// 1. Set up Media Queries - "When do I display hamburger button?"
+// 2. Get the hamburger menu set up
+// 3. Reveal Nav when I scroll up - "Transparent BG + Transform"
+// 4. Polish the positioning of the elements.
+// 5. Place them in <a> tags & give hover effects.
+// 6. Figure out how to animate them on-load.
+// NEXT: Get the Social Icons & Email sidebars setup.
+
+/* 
+--> Mobile Styles
+--> @media (min-width: INSERT PX HERE) {...} (tablet + desktop styles & up)
+
+*/
 
 const Header = () => ( // removed siteTitle props
   <header className={style.headerDiv}>
@@ -29,13 +42,5 @@ const Header = () => ( // removed siteTitle props
     </div>
   </header>
 )
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
 export default Header

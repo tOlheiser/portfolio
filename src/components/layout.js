@@ -34,17 +34,18 @@ const Layout = ({ children }) => {
     {/*Page Section*/}
       <div className={style.landingPageContainer}>
         <Header siteTitle={"Tanner Olheiser"} /> {/* data.site.siteMetadata.title*/}
-        <Hero />      
+        {/*<Hero />*/}      
       </div>
-    {/*Page Section*/}
+      {/*
       <div className={`${style.pageContainer} ${style.center}`}>
         <Work />
       </div> 
+      
       <div className={`${style.pageContainer} ${style.center}`}>
         <About />
         <Skills />
         <Contact />
-      </div>
+      </div> */}
     </div>
   )
 }
