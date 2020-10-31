@@ -6,3 +6,11 @@ My site is inspired by Brittany Chiang's portfolio site. Yes, I could fork her r
 In developing my portfolio site, I was VERY rusty with React to begin with, have no familiarity with Gatsby.js, and this is also my first time working with Hooks. 
 
 **Stumbling Block #1: CSS Modules feel... clunky.** I've noticed that requiring a CSS file to style one or two elements felt cumbersome when this is something you find yourself doing often. When I first learned of Styled Components, it looked VERY strange. But after reading about it more and more, it's something I'd like to try.
+
+## Googlings
+**Q: How do I import something with a different name?***Makes my code more readable.*
+**Solution:** Inside curly braces, enter the name of the module followed by 'as' and your preferred alias.
+**Source:** https://stackoverflow.com/questions/39282253/how-can-i-alias-a-default-import-in-javascript
+```javascript 
+import { foo as bar } from 'my-module';
+```
