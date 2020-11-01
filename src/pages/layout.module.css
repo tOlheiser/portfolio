@@ -1,5 +1,9 @@
 body {
     background-color: #2C2A3C;
+    /* Making the body's position relative & declaring overflow as hidden 
+    will prevent a horizontal scrollbar from appearing when using translateX*/
+    position: relative;
+    overflow: hidden;
 }
 
 .landingPageContainer {
@@ -7,7 +11,6 @@ body {
     background-color: #2C2A3C;
     display: flex;
     flex-direction: column;
-    width: 100%;
     justify-content: flex-start;
 }
 
