@@ -52,7 +52,7 @@ const Header = () => {
 
       {viewportWidth < breakpoint ? 
         
-        <div ref={node} className={styles.hideOverflow}>
+        <div ref={node}>
           <Burger open={open} setOpen={setOpen} />
           <Menu open={open} setOpen={setOpen} />
         </div>
