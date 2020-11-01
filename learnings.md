@@ -14,3 +14,30 @@ In developing my portfolio site, I was VERY rusty with React to begin with, have
 ```javascript 
 import { foo as bar } from 'my-module';
 ```
+
+## Look Into:
+* Themeing using Style Components
+* Using context to pass styles down
+
+## Working Efficiently
+
+It's tough to assess what needs to be done, when, in what order, etc.
+
+**Scenario: I just completed my basic nav**
+
+**Things I still have left to do on the nav:**
+* *General Styling* - Style my hamburger menu & links. *Coming back to this later, as the hamburger menu may cause bugs elsewhere*
+* *Polish Positioning* - Polish the positioning of my Desktop nav elements (vertically centered)
+* *Interactivity* - Add a hover effect to my logo
+* *Interactivity* - Add a hover effect to my links
+* *Interactivity* - Reveal nav when scrolling up
+* *Interactivity* - Animate elements on-load
+
+Completing all my features on the Nav, then moving onto the next section where I complete all the features, and so on feels tedious. 
+
+**Solution:** I'll do 'broad strokes'.
+
+### Workflow: Complete #1 on each section before moving on to #2, and so on.
+1. Get the content on the page for all views with some general styling.
+2. Polish the positioning & breakpoints.
+3. Bring your page to life with interactivity. Scrolling animations, animations on-load, click & hover events, etc.
