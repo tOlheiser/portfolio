@@ -1,55 +1,3 @@
-import { Link } from "gatsby"
-import React from "react"
-import navLogo from "../assets/navLogo.svg"
-import stylesheet from "../pages/header.module.css"
-import Button from "./button"
-import Menu from 'react-burger-menu/lib/menus/slide'
-
-var styles = {
-  bmBurgerButton: {
-    position: 'fixed',
-    width: '36px',
-    height: '30px',
-    right: '36px',
-    top: '36px'
-  },
-  bmBurgerBars: {
-    background: '#373a47'
-  },
-  bmBurgerBarsHover: {
-    background: '#a90000'
-  },
-  bmCrossButton: {
-    height: '24px',
-    width: '24px'
-  },
-  bmCross: {
-    background: '#bdc3c7'
-  },
-  bmMenuWrap: {
-    position: 'fixed',
-    height: '100%'
-  },
-  bmMenu: {
-    background: '#373a47',
-    padding: '2.5em 1.5em 0',
-    fontSize: '1.15em'
-  },
-  bmMorphShape: {
-    fill: '#373a47'
-  },
-  bmItemList: {
-    color: '#b8b7ad',
-    padding: '0.8em'
-  },
-  bmItem: {
-    display: 'inline-block'
-  },
-  bmOverlay: {
-    background: 'rgba(0, 0, 0, 0.3)'
-  }
-}
-
 // 1. Set up Media Queries - "When do I display hamburger button?"
 // 2. Get the hamburger menu set up
 // 3. Reveal Nav when I scroll up - "Transparent BG + Transform"
@@ -58,60 +6,70 @@ var styles = {
 // 6. Figure out how to animate them on-load.
 // NEXT: Get the Social Icons & Email sidebars setup.
 
-/* 
---> Mobile Styles
---> @media (min-width: INSERT PX HERE) {...} (tablet + desktop styles & up)
+import { Link } from "gatsby"
+import React, { useState, useRef } from "react"
+import navLogo from "../assets/navLogo.svg"
+import styles from "../pages/header.module.css"
+import Button from "./button"
+import Burger from "./burger"
+import Menu from "./menu"
+import { useOnClickOutside } from '../hooks'
 
-*/
+const useViewport = () => {
+  // Declare the viewport width, and a method to update its state.
+  const [viewportWidth, setWidth] = React.useState(window.innerWidth);
 
+  // useEffect hook listens for changes in the width of the window
+  React.useEffect(() => {
+    const handleWindowResize = () => setWidth(window.innerWidth);
+    // When the window resizes, update the viewportWidth's state.
+    window.addEventListener("resize", handleWindowResize);
+    // returns a function from the effect that removes the event listener, freeing up memory when the component unmounts 
+    return () => window.removeEventListener("resize", handleWindowResize);
+  }, []);
+  // Passing an empty array as the dependencies of the effect causes the effect only to run when the component mounts -> NOT each time it updates 
 
+  return { viewportWidth };
+} 
 
+const Header = () => {
+  // Open/Close state for hamburger menu
+  const [open, setOpen] = useState(false); // initial state = false
+  const node = React.useRef();
+  const { viewportWidth } = useViewport();
+  const breakpoint = 620;
+  useOnClickOutside(node, () => setOpen(false));
 
+  return(
+    <header className={styles.headerDiv}>
+      
+      {/* Logo Container */}
+      <div className={styles.logo}> {/*stylesheet.logo */}
+          <Link to="/">
+            <img src={navLogo} alt="Tanner Olheiser's Logo" height="60px" />
+          </Link>
+      </div>
 
-
-
-//const Header = () => ( // removed siteTitle props
-class Header extends React.Component {
-
-  showSettings (event) {
-    event.preventDefault();
-  }
-
-  render () {
-    return(
-  <header className={stylesheet.headerDiv}>
-    
-    {/* Logo Container */}
-    <div className={stylesheet.logo}> 
-        <Link to="/">
-          <img src={navLogo} alt="Tanner Olheiser's Logo" height="60px" />
-        </Link>
-    </div>
-
-    {/* Link Container */}
-    {/*<div className={style.linkDiv}>*/}
-
-      <Menu right styles={styles}>
-        <a id="home" className="menu-item" href="/">Home</a>
-        <a id="about" className="menu-item" href="/about">About</a>
-        <a id="contact" className="menu-item" href="/contact">Contact</a>
-        <a onClick={ this.showSettings } className="menu-item--small" href="">Settings</a>
-      </Menu>
-
-    {/* Regular Nav
-      <ul className={styles.child}>
-        <li>Work</li>
-        <li>Skills</li>
-        <li>About</li>
-        <li>Contact</li>
-        <li>
-          <Button content="Resume" />
-        </li>
-      </ul>
-    */}
-    {/*</div>*/}
-  </header>
-//)
-    )}}
+      {viewportWidth < breakpoint ? 
+        
+        <div ref={node} className={styles.hideOverflow}>
+          <Burger open={open} setOpen={setOpen} />
+          <Menu open={open} setOpen={setOpen} />
+        </div>
+        :
+        
+        <ul className={styles.child}>
+          <li>Work</li>
+          <li>Skills</li>
+          <li>About</li>
+          <li>Contact</li>
+          <li>
+            <Button content="Resume" />
+          </li>
+        </ul>
+      }
+    </header>
+  )
+}
     
 export default Header
