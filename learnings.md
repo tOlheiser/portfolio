@@ -41,3 +41,20 @@ Completing all my features on the Nav, then moving onto the next section where I
 1. Get the content on the page for all views with some general styling.
 2. Polish the positioning & breakpoints.
 3. Bring your page to life with interactivity. Scrolling animations, animations on-load, click & hover events, etc.
+
+## Conditionally Positioning Elements
+
+I came to a crossroads where I needed to position something, either 'left: 40px', or 'right: 40px'. If right was 40px, what do I make left's value? If you just use 'auto', that won't mess up your positioning when you specify the right value.
+
+## First major hijinks working with Styled Components
+
+For some odd reason, I assumed that styled components would inheret whatever props the parent component had.
+
+```js
+const Side = ({orientation}) => (
+  <StyleDiv position={orientation}
+)
+
+// props need to be passed into styled components for them to be used.
+```
+
