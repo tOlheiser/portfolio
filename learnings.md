@@ -58,3 +58,89 @@ const Side = ({orientation}) => (
 // props need to be passed into styled components for them to be used.
 ```
 
+## Improving the rendering for Icon
+
+Currently, this is what I have: 
+
+```js
+<StyledSocialList>
+  <li>
+    <a href="https://github.com/tOlheiser" aria-label="Github">
+      <Icon name="GitHub" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/tanner-olheiser/" aria-label="Linkedin">
+      <Icon name="Linkedin" />
+    </a>
+  </li>
+  <li>
+    <a href="https://codepen.io/tolheiser" aria-label="Codepen">
+      <Icon name="Codepen" />
+    </a>
+  </li>
+  <li>
+    <a href="https://twitter.com/OlheiserSK" aria-label="Twitter">
+      <Icon name="Twitter" />
+    </a>
+  </li>
+</StyledSocialList>
+```
+
+Instead of rendering each list item manually, I'd like to map these out. If I add/remove/modifty social media icons I don't want to have to do it manually in this long format.
+
+### Change 1: Added a config.js file
+
+In this file, I'll store an array of objects that contain data about my social media icons. I'll map over this array to get the data.
+
+```js 
+// config.js
+
+export const socialMedia = [
+  {
+    platform: "GitHub",
+    address: "https://github.com/tOlheiser"
+  },
+  {
+    platform: "Linkedin",
+    address: "https://www.linkedin.com/in/tanner-olheiser/"
+  },
+  {
+    platform: "Codepen",
+    address: "https://codepen.io/tolheiser"
+  },
+  {
+    platform: "Twitter",
+    address: "https://twitter.com/OlheiserSK"
+  }
+]
+```
+
+### Change 2: Mapping over the array 
+
+```js
+// social.js
+
+// Because socialMedia is a named import, you have to put curly braces around it. If it was a defualt import, you wouldn't need them.
+import {socialMedia} from '../content/config';
+
+// ...
+
+const Social = () => (
+  <Sidebar position="left">
+    <StyledSocialList>
+    {/* if socialMedia is true/has data, map over it */}
+    {/* Destructure the platform and address variables */}
+      {socialMedia && socialMedia.map(({platform, address}, i) => (
+        <li key={i}>
+          <a href={address} aria-label={platform}>
+            <Icon name={platform}/>
+          </a>
+        </li>
+      ))}
+      
+    </StyledSocialList>
+  </Sidebar>
+)
+```
+
