@@ -6,6 +6,14 @@ import IconGitHub from '../icons/github';
 import IconLinkedin from '../icons/linkedin';
 import IconCodepen from '../icons/codepen';
 import IconExternal from '../icons/external';
+import IconAppStore from '../icons/appstore';
+import IconFolder from '../icons/folder';
+import IconFork from '../icons/fork';
+import IconInstagram from '../icons/instagram';
+import IconLocation from '../icons/location';
+import IconPlayStore from '../icons/playstore';
+import IconStar from '../icons/star';
+import IconZap from '../icons/zap';
 
 /* When Icon is called, the name of the SVG is passed in as props. 
 We pass the name of the SVG in a switch statement which returns the 
