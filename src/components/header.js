@@ -5,50 +5,72 @@
 // 5. Place them in <a> tags & give hover effects.
 // 6. Figure out how to animate them on-load.
 // NEXT: Get the Social Icons & Email sidebars setup.
+/* ! The amount of space between the sidebars and the edge of the screen 
+should be the same for the logo & nav links. */
 
 import { Link } from "gatsby"
 import React, { useState, useRef } from "react"
 import navLogo from "../assets/navLogo.svg"
-import styles from "../pages/header.module.css"
 import Button from "./button"
 import Burger from "./burger"
 import Menu from "./menu"
-import { useOnClickOutside } from '../hooks'
+import useOnClickOutside from '../hooks/useOnClickOutside'
+import styled from 'styled-components'
+import useViewport from '../hooks/useViewport'
 
-const useViewport = () => {
-  // Declare the viewport width, and a method to update its state.
-  const [viewportWidth, setWidth] = React.useState(window.innerWidth);
+const StyledHeader = styled.header`
+  background-color: #2C2A3C;
+  /*margin-bottom: 1rem;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  justify-self: flex-start;
+`
 
-  // useEffect hook listens for changes in the width of the window
-  React.useEffect(() => {
-    const handleWindowResize = () => setWidth(window.innerWidth);
-    // When the window resizes, update the viewportWidth's state.
-    window.addEventListener("resize", handleWindowResize);
-    // returns a function from the effect that removes the event listener, freeing up memory when the component unmounts 
-    return () => window.removeEventListener("resize", handleWindowResize);
-  }, []);
-  // Passing an empty array as the dependencies of the effect causes the effect only to run when the component mounts -> NOT each time it updates 
+const StyledLogo = styled.div`
+  /*margin: 0 auto;*/
+  padding-left: 3em;
+  padding-top: 1.5em;
+`
 
-  return { viewportWidth };
-} 
+const StyledUnorderedList = styled.ul`
+  color: #fff;
+  display: flex;
+  
+  li {
+    color: #CCD6F6;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-right: 1.6em; 
+    &:last-child {
+      padding-right: 3em;
+    }   
+  }
+
+`
 
 const Header = () => {
   // Open/Close state for hamburger menu
   const [open, setOpen] = useState(false); // initial state = false
-  const node = React.useRef();
+  const node = useRef();
   const { viewportWidth } = useViewport();
   const breakpoint = 620;
   useOnClickOutside(node, () => setOpen(false));
 
   return(
-    <header className={styles.headerDiv}>
+    
+    <StyledHeader>
       
       {/* Logo Container */}
-      <div className={styles.logo}> {/*stylesheet.logo */}
+      <StyledLogo> {/*stylesheet.logo */}
           <Link to="/">
             <img src={navLogo} alt="Tanner Olheiser's Logo" height="60px" />
           </Link>
-      </div>
+      </StyledLogo>
 
       {viewportWidth < breakpoint ? 
         
@@ -58,7 +80,7 @@ const Header = () => {
         </div>
         :
         
-        <ul className={styles.child}>
+        <StyledUnorderedList>
           <li>Work</li>
           <li>Skills</li>
           <li>About</li>
@@ -66,9 +88,9 @@ const Header = () => {
           <li>
             <Button content="Resume" />
           </li>
-        </ul>
+        </StyledUnorderedList>
       }
-    </header>
+    </StyledHeader>
   )
 }
     
