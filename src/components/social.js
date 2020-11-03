@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Icon from './icons/icon';
 import Sidebar from './sidebar';
-import {socialMedia} from '../content/config';
+import {socialMedia} from '../config';
 
 const StyledSocialList = styled.div`
   display: flex;
