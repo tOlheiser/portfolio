@@ -4,12 +4,13 @@ export const theme = {
   // Colours
   primaryDark: '#2C2A3C',
   primaryLight: '#CCD6F6',
-  primaryHover: '#343078',
+  accentLight: '#8892B0',
   main: "#64ffDA",
+  accentMain: '#343078',
 
   // Font Related
   primaryFont: "'Source Sans Pro', sans-serif",
-  monoFont: "'Source Code Pro', monospace",
+  monoFont: "'Source Code Pro', monospace", // Try to get a lighter font-weight
   // convert to em then implement.
   xxs: '13px',
   xs: '14px',
@@ -18,3 +19,8 @@ export const theme = {
   xl: '70px',
   xxl: '80px'
 }
+/*
+Source Code Pro or Cousine
+PT Mono looks awful as my nav link font.
+PT Mono: Feels a little fuzzy. A lighter weight might be nicer.
+*/
