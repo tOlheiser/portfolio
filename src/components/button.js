@@ -1,4 +1,3 @@
-import React from "react"
 import styled from "styled-components"
 
 const StyledButton = styled.button`
@@ -39,8 +38,4 @@ const StyledButton = styled.button`
     }
 `
 
-const Button = ({content}) => (
-    <StyledButton>{content}</StyledButton>
-)
-
-export default Button
+export default StyledButton
