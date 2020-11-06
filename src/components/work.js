@@ -1,76 +1,113 @@
-/*
-.sectionContainer {
-    display: flex;
-    width: 960px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    border: 2px solid red;
-}
+import React from "react";
+import styled from "styled-components";
+import {StyledH2, StyledH3, StyledP, StyledTags} from "../styles/contentTags"; 
+import Icon from "./icons/icon";
+import projects from "../content/projects";
+// import PropTypes from 'prop-types'
 
-.sectionHeading {
-    font-family: 'Source Sans Pro', serif;
-    font-size: 70px;
-    line-height: 70px;
-    color: #CCD6F6;
-}
 
-.subHeading {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 16px;
-    line-height: 17.6px;
-    color: #64FFDA;
-}
+const StyledSectionDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+`;
 
-.accent {
-    color: #64FFDA;
-}
+const StyledHeadingDiv = styled.div`
+  text-align: center;
+  &:after {
+    content: '';
+    display: block;
+    width: 99px;
+    height: 2px;
+    margin: 0 auto;
+    background-color: ${props => props.theme.main};
+  }
+`;
 
-.cardContainer {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2em;
-    margin-bottom: 2em;
-}
+const ProjectPhoto = styled.div`
+  width: 600px;
+  max-width: 600px;
+  height: 350px;
+  background-color: ${props => props.theme.main};
+  margin-bottom: 20px;
+`
 
-.projectPhoto {
-    width: 250px;
-    height: 250px;
-    background-color: #CCD6F6;
-}
+const StyledTagDiv = styled.div`
+  text-align: right;
+  p {
+    &:last-of-type {
+      padding-right: 0;
+    }
+  }
+`
 
-.projectDescription {
-    width: 250px;
-    height: 300px;
-    background-color: aliceblue;
-}
+const ProjectCard = styled.div`
+  max-width: 600px;
+`
 
-.workSection {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-*/
+const StyledSocialList = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  list-style: none;
+  margin-top: .7em;
 
-import React from "react"
-import Button from "./button"
-import PropTypes from 'prop-types'
+  li {
+    padding: 10px;
+    &:last-of-type {
+      padding-right: 0;
+    }
+    a {
+      /* May need to use refs to get hover functioning properly */
+      &:hover,
+      &:focus {
+        transform: translateY(-3px);
+        fill: ${props => props.theme.main};
+      }
+      svg {
+        width: 20px;
+        height: 20px;
+        fill: ${props => props.theme.primaryLight};
+      }
+    }
+  }
+`;
+
 
 const Work = () => ( 
-    <div> {/* Section Container - Max width and c
+    <StyledSectionDiv> {/* Section Container - Max width and c
     entered in 100vh container*/}
-        <div> {/* Section Title + Content */}
-            <h2>See what I've done</h2>
-            <h1>Projects</h1>
-        </div>
-        <div>{/* Work section */}
-            <div>{/* Project Card Container */}
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
+        <StyledHeadingDiv> {/* Section Title + Content */}
+            <StyledH3>See what I've done</StyledH3>
+            <StyledH2>Projects</StyledH2>
+        </StyledHeadingDiv>
+
+        {projects && projects.map((project) => (
+          <ProjectCard>
+            <StyledH3>{project.name}</StyledH3>
+            <ProjectPhoto></ProjectPhoto> 
+            <StyledP>{project.description}</StyledP>
+            <StyledTagDiv>
+              {project.tags.map(tag => (
+                <StyledTags>{tag}</StyledTags>
+              ))}
+            </StyledTagDiv>
+            <StyledSocialList>
+              <li>
+                <a href={project.sourceCode} aria-label="GitHub">
+                  <Icon name="GitHub"/>
+                </a>
+              </li>
+              <li>
+                <a href={project.demo} aria-label="Demo">
+                  <Icon name="External"/>
+                </a>
+              </li>
+            </StyledSocialList> 
+          </ProjectCard>
+        ))}
+    </StyledSectionDiv>
 )
 
 export default Work
