@@ -1,106 +1,77 @@
 import React from "react";
+import styled from "styled-components";
+import SectionHeading from "./sectionHeading";
 import PropTypes from 'prop-types';
+import { StyledH3 } from "../styles/contentTags";
+import skills from "../content/skillContent";
 
-/*
-.sectionContainer {
-    display: flex;
-    width: 960px;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    border: 2px solid red;
-}
+const StyledSectionDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+`;
 
-.contentContainer {
-    padding-left: 3em;
-    padding-right: 3em;
-}
+const StyledRowDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-top: 60px;
+  margin-bottom: 60px;
+`;
 
-.skillSection {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    border: 2px solid blue;
-    max-width: 960px;
-    width: 960px;
-    justify-content: space-between;
-}
+const CardContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: ${props => props.theme.primaryDark};
+  border: 1px solid ${props => props.theme.main};
+  width: 270px;
+  height: 400px;
+  margin: 20px;
+  margin-top: 100px;
+  text-align: center;
 
-.skillCard {
-    display: flex;
-    flex-direction: column;
-    padding: 1em;
-}
+  li {
+    position: relative;
+    top: -60px;
+    list-style: none;
+    padding-bottom: 15px;
+    font-size: 15px;
+    font-family: ${props => props.theme.primaryFont};
+    color: ${props => props.theme.primaryLight};
+  }
+`
 
-.skillCard:first-of-type {
-    padding-left: 0;
-}
+const H3 = styled(StyledH3)`
+color: ${props => props.theme.main};
+position: relative;
+top: -60px;
+`
 
-.skillCard:last-of-type {
-    padding-right: 0;
-}
+const Bubble = styled.div`
+  height: 100px;
+  width: 100px;
+  background-color: ${props => props.bgColor};
+  border-radius: 50%;
+  position: relative;
+  top: -50px;
+  margin: 0 auto;
+`
 
-
-.skillIcon {
-    width: 270px;
-    height: 340px;
-    background-color: #CCD6F6;
-    border: 2px solid yellow;
-}
-
-.skillIcon:first-child {
-    padding-left: 0;
-}
-
-.skillContent {
-
-}
-
-.sectionHeading {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 70px;
-    line-height: 70px;
-    color: #CCD6F6;
-}
-
-.subHeading {
-    font-family: 'Source Code Pro', monospace;
-    font-size: 16px;
-    line-height: 17.6px;
-    color: #64FFDA;
-}
-
-p {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 20px;
-    line-height: 26px;
-    color: #8892B0;
-}
-*/
 const Skills = () => ( 
-    <div> {/* Section Container - Max width and c
-    entered in 100vh container*/}
-        <div> {/* Section Title + Content */}
-            <h2>Technologies I use</h2>
-            <h1>My Skills</h1>
-        </div>
-        <div>{/* Work section */}
-            <div>{/* Project Card Container */}
-                <div></div>
-                <div></div>
-            </div>
-
-            <div>{/* Project Card Container */}
-                <div></div>
-                <div></div>
-            </div>
-
-            <div>{/* Project Card Container */}
-                <div></div>
-                <div></div>
-            </div>
-        </div>
-    </div>
+  <StyledSectionDiv>
+    <SectionHeading heading="My Skills" subheading="Technologies I use" />
+    <StyledRowDiv>
+    {skills && skills.map(skill => (
+      <CardContainer>
+        <Bubble bgColor={skill.iconBackground}/>
+        <H3>{skill.title}</H3>
+        {skill.technologies.map(tech => (
+          <li key={tech.i}><strong>{tech.category}:</strong> {tech.item}</li>
+        ))}
+      </CardContainer>
+    ))}
+    </StyledRowDiv>
+  </StyledSectionDiv>
 )
 
 export default Skills
