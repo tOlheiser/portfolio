@@ -42,7 +42,7 @@ export const GlobalStyles = createGlobalStyle`
     /* Making the body's position relative & declaring overflow as hidden 
     will prevent a horizontal scrollbar from appearing when using translateX*/
     position: relative;
-    overflow-x: hidden; /* Allow overflow vertically but not horizontally. */
+    overflow-x: hidden;  /*Allow overflow vertically but not horizontally. */
   }
 
 /* These class name styles DO work.*/
@@ -56,8 +56,10 @@ export const GlobalStyles = createGlobalStyle`
 
   .pageContainer { 
       display: flex;
+      flex-direction: column;
       width: 100%;
       justify-content: center;
+      align-items: center;
   }
 
   .center {
