@@ -3,27 +3,29 @@ import styled from "styled-components";
 import {StyledH2, StyledH3, StyledP, StyledTags} from "../styles/contentTags"; 
 import Icon from "./icons/icon";
 import projects from "../content/projects";
+import SectionHeading from "./sectionHeading";
 // import PropTypes from 'prop-types'
 
+const H3 = styled(StyledH3)`
+font-family: ${props => props.theme.primaryFont};
+font-size: 30px;
+color: ${props => props.theme.primaryLight};
+`
 
 const StyledSectionDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: calc(100vw - 150px);
+  margin: 0 200px;
 `;
 
-const StyledHeadingDiv = styled.div`
-  text-align: center;
-  &:after {
-    content: '';
-    display: block;
-    width: 99px;
-    height: 2px;
-    margin: 0 auto;
-    background-color: ${props => props.theme.main};
-  }
-`;
+const CardDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`
 
 const ProjectPhoto = styled.div`
   width: 600px;
@@ -44,6 +46,7 @@ const StyledTagDiv = styled.div`
 
 const ProjectCard = styled.div`
   max-width: 600px;
+  margin: 0 30px;
 `
 
 const StyledSocialList = styled.div`
@@ -78,15 +81,13 @@ const StyledSocialList = styled.div`
 const Work = () => ( 
     <StyledSectionDiv> {/* Section Container - Max width and c
     entered in 100vh container*/}
-        <StyledHeadingDiv> {/* Section Title + Content */}
-            <StyledH3>See what I've done</StyledH3>
-            <StyledH2>Projects</StyledH2>
-        </StyledHeadingDiv>
+      <SectionHeading heading="Projects" subheading="See what I've done" />
 
+      <CardDiv>
         {projects && projects.map((project) => (
           <ProjectCard>
-            <StyledH3>{project.name}</StyledH3>
-            <ProjectPhoto></ProjectPhoto> 
+            <H3>{project.name}</H3>
+            <ProjectPhoto/>
             <StyledP>{project.description}</StyledP>
             <StyledTagDiv>
               {project.tags.map(tag => (
@@ -107,6 +108,8 @@ const Work = () => (
             </StyledSocialList> 
           </ProjectCard>
         ))}
+      </CardDiv>
+
     </StyledSectionDiv>
 )
 
