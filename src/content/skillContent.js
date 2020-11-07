@@ -1,62 +1,79 @@
 const skills = [
   {
-    iconBackground: "background color",
-    icon: "icon svg",
-    title: "example: 'Frontend'",
-    skills: [
+    iconBackground: "#64ffDA;",
+    //icon: "icon svg",
+    title: "Front-end",
+    technologies: [
       {
-        category: "what type of skill is this?",
-        skill: "name of language/framework/tool"
+        category: "Mark-up",
+        item: "Semantic HTML"
       },
       {
-        category: "type of skill",
-        skill: "name of language"
-      }
+        category: "Styling",
+        item: "CSS, Styled Components"
+      },
+      {
+        category: "Preprocessor",
+        item: "PostCSS"
+      },
+      {
+        category: "Language",
+        item: "JavaScript ES6+"
+      },
+      {
+        category: "Libraries",
+        item: "React, jQuery"
+      },
+      {
+        category: "SSG",
+        item: "Gatsby"
+      },
+      {
+        category: "CMS",
+        item: "Wordpress"
+      },
     ]
   },
   {
-    iconBackground: "background color",
-    icon: "icon svg",
-    title: "example: 'Frontend'",
-    skills: [
+    iconBackground: "#64ffDA;",
+    //icon: "icon svg",
+    title: "Back-end",
+    technologies: [
       {
-        category: "what type of skill is this?",
-        skill: "name of language/framework/tool"
+        category: "Language",
+        item: "Node"
       },
       {
-        category: "type of skill",
-        skill: "name of language"
-      }
+        category: "Framework",
+        item: "Express"
+      },
+      {
+        category: "Database",
+        item: "mySQL, MongoDB"
+      },
     ]
   },
   {
-    iconBackground: "background color",
-    icon: "icon svg",
-    title: "example: 'Frontend'",
-    skills: [
+    iconBackground: "#64ffDA;",
+    //icon: "icon svg",
+    title: "Tooling",
+    technologies: [
       {
-        category: "what type of skill is this?",
-        skill: "name of language/framework/tool"
+        category: "Source Control",
+        item: "Git"
       },
       {
-        category: "type of skill",
-        skill: "name of language"
-      }
-    ]
-  },
-  {
-    iconBackground: "background color",
-    icon: "icon svg",
-    title: "example: 'Frontend'",
-    skills: [
-      {
-        category: "what type of skill is this?",
-        skill: "name of language/framework/tool"
+        category: "Package Manager",
+        item: "NPM"
       },
       {
-        category: "type of skill",
-        skill: "name of language"
-      }
+        category: "Bundler",
+        item: "Parcel, Webpack"
+      },
+      {
+        category: "Wireframes",
+        item: "Adobe XD"
+      },
     ]
   }
 ]
