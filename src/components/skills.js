@@ -23,7 +23,7 @@ const CardContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: ${props => props.theme.primaryDark};
-  border: 1px solid ${props => props.theme.main};
+  border: 2px solid ${props => props.theme.main};
   width: 270px;
   height: 400px;
   margin: 20px;
