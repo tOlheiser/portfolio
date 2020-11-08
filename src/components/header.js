@@ -11,7 +11,7 @@ should be the same for the logo & nav links. */
 import { Link } from "gatsby"
 import React, { useState, useRef } from "react"
 import navLogo from "../assets/navLogo.svg"
-import Button from "./button"
+import StyledButton from "./button"
 import Burger from "./burger"
 import Menu from "./menu"
 import useOnClickOutside from '../hooks/useOnClickOutside'
@@ -19,6 +19,8 @@ import styled from 'styled-components'
 import useViewport from '../hooks/useViewport'
 
 const StyledHeader = styled.header`
+  margin-top: 10px;
+  margin-bottom: 20px;
   background-color: #2C2A3C;
   /*margin-bottom: 1rem;*/
   display: flex;
@@ -26,12 +28,16 @@ const StyledHeader = styled.header`
   justify-content: space-between;
   align-content: center;
   justify-self: flex-start;
+  align-items: center;
 `
 
 const StyledLogo = styled.div`
   /*margin: 0 auto;*/
-  padding-left: 3em;
-  padding-top: 1.5em;
+  padding-left: 40px;
+
+  @media screen and (max-width: 620px) {
+    padding-left: 30px
+  }
 `
 
 const StyledUnorderedList = styled.ul`
@@ -50,8 +56,12 @@ const StyledUnorderedList = styled.ul`
       padding-right: 3em;
     }   
   }
-
 `
+
+const StyledBurgerDiv = styled.div`
+display: flex;
+`
+
 
 const Header = () => {
   // Open/Close state for hamburger menu
@@ -86,7 +96,7 @@ const Header = () => {
           <li>About</li>
           <li>Contact</li>
           <li>
-            <Button content="Resume" />
+            <StyledButton>Resume</StyledButton>
           </li>
         </StyledUnorderedList>
       }
