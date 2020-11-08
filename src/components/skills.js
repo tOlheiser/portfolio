@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import SectionHeading from "./sectionHeading";
+import SectionContainer from "./sectionContainer";
 import PropTypes from 'prop-types';
 import { StyledH3 } from "../styles/contentTags";
 import skills from "../content/skillContent";
@@ -17,34 +18,34 @@ const StyledRowDiv = styled.div`
   flex-direction: row;
   margin-top: 60px;
   margin-bottom: 60px;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const CardContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: ${props => props.theme.primaryDark};
-  border: 2px solid ${props => props.theme.main};
-  width: 270px;
-  height: 400px;
-  margin: 20px;
-  margin-top: 100px;
-  text-align: center;
+background-color: ${props => props.theme.primaryDark};
+border: 2px solid ${props => props.theme.main};
+width: 270px;
+height: 400px;
+margin: 20px;
+margin-top: 100px;
+text-align: center;
 
-  li {
-    position: relative;
-    top: -60px;
-    list-style: none;
-    padding-bottom: 15px;
-    font-size: 15px;
-    font-family: ${props => props.theme.primaryFont};
-    color: ${props => props.theme.primaryLight};
-  }
+li {
+  position: relative;
+  top: -60px;
+  list-style: none;
+  padding-bottom: 15px;
+  font-size: 15px;
+  font-family: ${props => props.theme.primaryFont};
+  color: ${props => props.theme.primaryLight};
+}
 `
 
 const H3 = styled(StyledH3)`
 color: ${props => props.theme.main};
 position: relative;
-top: -60px;
+top: -70px;
 `
 
 const Bubble = styled.div`
@@ -58,7 +59,7 @@ const Bubble = styled.div`
 `
 
 const Skills = () => ( 
-  <StyledSectionDiv>
+  <SectionContainer>
     <SectionHeading heading="My Skills" subheading="Technologies I use" />
     <StyledRowDiv>
     {skills && skills.map(skill => (
@@ -71,7 +72,7 @@ const Skills = () => (
       </CardContainer>
     ))}
     </StyledRowDiv>
-  </StyledSectionDiv>
+  </SectionContainer>
 )
 
 export default Skills
