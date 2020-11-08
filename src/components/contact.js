@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import SectionHeading from "./sectionHeading"
+import SectionContainer from "./sectionContainer"
 import PropTypes from 'prop-types';
 import emailjs from "emailjs-com"
 import { StyledP } from "../styles/contentTags"
@@ -11,18 +12,6 @@ const StyledSectionDiv = styled.div`
   flex-direction: column;
   align-items: center;
   width: 80%;
-
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: ${props => props.theme.main};
-    position: relative;
-    top: 3px;
-    margin-right: .5em;
-    &:last-of-type {
-      margin-left: 2em;
-    }
-  }
 `;
 
 const StyledRowDiv = styled.div`
@@ -38,6 +27,18 @@ const ColumnDiv = styled.div`
 const P = styled(StyledP)`
   max-width: 600px;
   text-align: center;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    fill: ${props => props.theme.main};
+    position: relative;
+    top: 3px;
+    margin-right: .5em;
+    &:last-of-type {
+      margin-left: 2em;
+    }
+  }
 `
 
 const SmallText = styled.p`
@@ -185,7 +186,7 @@ const Contact = () => {
   }
   
   return (
-  <StyledSectionDiv>
+  <SectionContainer>
     <SectionHeading heading="Contact Me" subheading="Get in Touch"/>
     <P>Feel free to reach out if you have any questions for me or if you just 
     wanted to say hi. I love talking anything development related and I'm happy 
@@ -212,7 +213,7 @@ const Contact = () => {
       <StyledSubmit type="submit" value="Send"/>
     </form> 
     </ColumnDiv>
-  </StyledSectionDiv>
+  </SectionContainer>
   )}
 export default Contact
 
