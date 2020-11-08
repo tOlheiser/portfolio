@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import emailjs from "emailjs-com"
 import { StyledP } from "../styles/contentTags"
 import Icon from "./icons/icon"
+import {socialMedia} from '../config'
 
 const StyledSectionDiv = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ const P = styled(StyledP)`
 
 const SmallText = styled.p`
   font-family: ${props => props.theme.monoFont}; 
-  display: block;
+  display: inline-block;
   color: ${props => props.theme.primaryLight};
   font-size: 13px;
   padding-top: 7px;
@@ -171,6 +172,43 @@ const StyledSubmit = styled.input`
     }
 `
 
+const ContactInfo = styled.div`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`
+
+const StyledSocialList = styled.div` 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 60px;
+  
+  li {
+    padding-left: 30px;
+    padding-right: 30px;
+    a {
+      /* May need to use refs to get hover functioning properly */
+      &:hover,
+      &:focus {
+        transform: translateY(-3px);
+        fill: ${props => props.theme.main};
+      }
+      svg {
+        width: 25px;
+        height: 25px;
+        fill: ${props => props.theme.primaryLight};
+      }
+    }
+  }
+  
+  @media (min-width: 901px) {
+    display: none;
+  }
+`;
 
 const Contact = () => {
   const sendEmail = (e) => {
@@ -191,8 +229,11 @@ const Contact = () => {
     <P>Feel free to reach out if you have any questions for me or if you just 
     wanted to say hi. I love talking anything development related and I'm happy 
     to discuss my work as well as how I can help you.<br/>
-    <SmallText><Icon name="Location" />21 Fox Glove Crescent, Regina, SK
-    <Icon name="Phone" />{`(306) 519-2152`}</SmallText>
+
+    <ContactInfo>
+      <SmallText><Icon name="Location" />21 Fox Glove Crescent, Regina, SK</SmallText>
+      <SmallText><Icon name="Phone" />{`(306) 519-2152`}</SmallText>
+    </ContactInfo>
     </P>
     
 
@@ -213,6 +254,17 @@ const Contact = () => {
       <StyledSubmit type="submit" value="Send"/>
     </form> 
     </ColumnDiv>
+
+    <StyledSocialList>
+      {socialMedia && socialMedia.map(({platform, address}, i) => (
+          <li key={i}>
+            <a href={address} aria-label={platform}>
+              <Icon name={platform}/>
+            </a>
+          </li>
+        ))}
+    </StyledSocialList>
+
   </SectionContainer>
   )}
 export default Contact
