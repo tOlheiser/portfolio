@@ -3,7 +3,8 @@ import styled from "styled-components";
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 import skills from '../content/skillContent'
-import { StyledH3 } from "../styles/contentTags";
+import { StyledH3 } from "../styles/contentTags"
+import SectionHeading from "./sectionHeading"
 
 // 1. Find a 'tap gesture' svg to place on top right corner of each card.
 // 2. Determine a colour theme then add a corresponding transparent-gradient.
@@ -54,19 +55,22 @@ const SkillCarousel = (props) => {
   })
 
   return (
-    <div ref={sliderRef} className="keen-slider">
-      {skills && skills.map(skill => (
-        <div className="keen-slider__slide"> {/* number-slide1 */}
-        <CardContainer>
-        <Bubble bgColor={skill.iconBackground}/>
-        <H3>{skill.title}</H3>
-        {skill.technologies.map(tech => (
-          <li key={tech.i}><strong>{tech.category}:</strong> {tech.item}</li>
+    <React.Fragment>
+      <SectionHeading heading="My Skills" subheading="Technologies I use"/>
+      <div ref={sliderRef} className="keen-slider">
+        {skills && skills.map(skill => (
+          <div className="keen-slider__slide"> {/* number-slide1 */}
+          <CardContainer>
+          <Bubble bgColor={skill.iconBackground}/>
+          <H3>{skill.title}</H3>
+          {skill.technologies.map(tech => (
+            <li key={tech.i}><strong>{tech.category}:</strong> {tech.item}</li>
+          ))}
+        </CardContainer>
+          </div>
         ))}
-      </CardContainer>
-        </div>
-      ))}
-    </div>
+      </div>
+    </React.Fragment>
   )
 }
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 import projects from '../content/projects'
+import SectionHeading from './sectionHeading'
 
 // 1. Find a 'tap gesture' svg to place on top right corner of each card.
 // 2. Determine a colour theme then add a corresponding transparent-gradient.
@@ -47,14 +48,17 @@ const ProjectCarousel = (props) => {
   })
 
   return (
-    <div ref={sliderRef} className="keen-slider">
-      {projects && projects.map(project => (
-        <div className="keen-slider__slide number-slide1">
-          <CarouselHeading>{project.name}</CarouselHeading><br/>
-          <CarouselTagline>Track & manage your certifications, and apply for jobs.</CarouselTagline>
-        </div>
-      ))}
-    </div>
+    <React.Fragment>
+      <SectionHeading heading="Projects" subheading="See what I've done"/>
+      <div ref={sliderRef} className="keen-slider">
+        {projects && projects.map(project => (
+          <div className="keen-slider__slide number-slide1">
+            <CarouselHeading>{project.name}</CarouselHeading><br/>
+            <CarouselTagline>Track & manage your certifications, and apply for jobs.</CarouselTagline>
+          </div>
+        ))}
+      </div>
+    </React.Fragment>
   )
 }
 
