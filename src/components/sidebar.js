@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const StyledSidebarElement = styled.div`
+const SideElement = styled.aside`
   width: 40px;
   position: fixed;
   bottom: 0;
@@ -10,15 +10,15 @@ const StyledSidebarElement = styled.div`
   right: ${props => (props.position === 'right' ? '40px' : 'auto')};
   z-index: 10;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
 
 const Sidebar = ({children, position}) => (
-  <StyledSidebarElement position={position}>
+  <SideElement position={position}>
     {children}
-  </StyledSidebarElement>
+  </SideElement>
 )
 
 Sidebar.propTypes = {
