@@ -2,9 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledBurger = styled.button`
+  /* Must be positioned absolute to work properly */
   position: absolute;
-  top: 5%;
-  right: 2rem;
+  top: 25px;
+  right: 30px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -46,14 +47,14 @@ const StyledBurger = styled.button`
 
 // open & setOpen are destructured
 const Burger = ({ open, setOpen }) => {
-    return (
-      // onClick handler is added to toggle the open prop
-        <StyledBurger open={open} onClick={() => setOpen(!open)}>
-            <div />
-            <div />
-            <div />
-        </StyledBurger>
-    )
+  return (
+  // onClick handler is added to toggle the open prop
+    <StyledBurger open={open} onClick={() => setOpen(!open)}>
+      <div />
+      <div />
+      <div />
+    </StyledBurger>
+  )
 }
 
 export default Burger;
