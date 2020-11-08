@@ -54,15 +54,43 @@ export const GlobalStyles = createGlobalStyle`
       justify-content: flex-start;
   }
 
-  .pageContainer { 
+
+
+  /* Original Page Container
+    .pageContainer { 
       display: flex;
       flex-direction: column;
       width: 100%;
       justify-content: center;
       align-items: center;
   }
+  */
 
   .center {
       align-items: center;
   }
+
+  [class^="number-slide"],
+[class*=" number-slide"] {
+  background: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 500;
+  height: 350px;
+  max-height: 100vh;
+  flex-wrap: wrap;
+  border-radius: 5px;
+}
+
+.number-slide1 {
+  background: rgb(64, 175, 255);
+  background: linear-gradient(
+    128deg,
+    rgba(64, 175, 255, 1) 0%,
+    rgba(63, 97, 255, 1) 100%
+  );
+}
 `
