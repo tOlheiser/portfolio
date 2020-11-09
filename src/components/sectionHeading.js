@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { StyledH2, StyledH3 } from "../styles/contentTags"; 
+import { StyledH2, Subheading } from "../styles/contentTags"; 
 
 const StyledHeadingDiv = styled.div`
   text-align: center;
@@ -17,7 +17,7 @@ const StyledHeadingDiv = styled.div`
 
 const SectionHeading = ({heading, subheading}) => (
   <StyledHeadingDiv> {/* Section Title + Content */}
-    <StyledH3>{subheading}</StyledH3>
+    <Subheading>{subheading}</Subheading>
     <StyledH2>{heading}</StyledH2>
   </StyledHeadingDiv>
 );

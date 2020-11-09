@@ -3,13 +3,12 @@ import styled from "styled-components"
 const StyledButton = styled.button`
     
     font-family: 'Source Code Pro', sans-serif;
-    font-size: 14px;
+    font-size: ${props => props.theme.xs};
     line-height: 14px;
     border: 1px solid #64ffDA;
     border-radius: .3em;
     background: transparent;
     color: #64ffDA;
-    line-height: 14px;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, 

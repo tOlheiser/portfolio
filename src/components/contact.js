@@ -46,7 +46,7 @@ const SmallText = styled.p`
   font-family: ${props => props.theme.monoFont}; 
   display: inline-block;
   color: ${props => props.theme.primaryLight};
-  font-size: 13px;
+  font-size: ${props => props.theme.xs};
   padding-top: 7px;
 `
 
@@ -79,7 +79,7 @@ const StyledLabel = styled.label`
   
   font-family: ${props => props.theme.primaryFont};
   color: ${props => props.theme.primaryLight};
-  font-size: 18px;
+  font-size: ${props => props.theme.m};
 `
 
 const StyledInput = styled.input`

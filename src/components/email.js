@@ -21,7 +21,7 @@ const StyledEmailDiv = styled.div`
     margin: 20px auto;
     padding: 10px;
     font-family: ${props => props.theme.monoFont};
-    font-size: 13px;
+    font-size: ${props => props.theme.xxs};
     letter-spacing: 0.1em;
     writing-mode: vertical-rl;
     &:hover,

@@ -79,7 +79,7 @@ const Projects = () => (
       <CardDiv>
         {projects && projects.map((project) => (
           <ProjectCard>
-            <H3>{project.name}</H3>
+            <StyledH3>{project.name}</StyledH3>
             <ProjectPhoto/>
             <StyledP>{project.description}</StyledP>
             <StyledTagDiv>

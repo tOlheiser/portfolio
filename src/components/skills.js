@@ -32,20 +32,20 @@ margin-top: 100px;
 text-align: center;
 
 li {
-  position: relative;
-  top: -60px;
   list-style: none;
   padding-bottom: 15px;
-  font-size: 15px;
+  font-size: ${props => props.theme.s};
   font-family: ${props => props.theme.primaryFont};
   color: ${props => props.theme.primaryLight};
 }
 `
 
 const H3 = styled(StyledH3)`
+font-family: ${props => props.theme.monoFont};
+font-size: ${props => props.theme.m};
 color: ${props => props.theme.main};
 position: relative;
-top: -70px;
+top: -20px;
 `
 
 const Bubble = styled.div`
