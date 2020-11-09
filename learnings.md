@@ -144,3 +144,7 @@ const Social = () => (
 )
 ```
 
+## Responsive Typography
+1. Work with REMs. It makes life easier. I didn't start with rem, and when I went back to change this, it was pretty tedious.
+2. You only really need to make the headings responsive. You wouldn't scale down paragraph text generally. It's at the desired size on desktop & mobile.
+Tip: Given this: 'clamp(3rem, 6vw, 5.4rem)' - 3rem is the minimum, 5.4rem is the maximum. The middle value (6vw) is tuned to define how early/late the size of the text changes when you scale down the screen.
