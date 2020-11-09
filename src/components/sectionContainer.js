@@ -13,8 +13,13 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100vw - 150px);
-  margin: 0 200px;
+  width: calc(100vw - 160px);
+  padding: 0 1.7rem;
+
+  @media (max-width: 900px) {
+    width: 100%;
+    padding: 0 2.3rem;
+  }
 `;
 
 const SectionContainer = ({children}) => (
