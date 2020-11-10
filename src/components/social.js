@@ -8,8 +8,6 @@ const StyledSocialList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0;
-  padding: 0;
   list-style: none;
   /* Vertical Line */
   &:after {
@@ -27,15 +25,15 @@ const StyledSocialList = styled.div`
     }
     a {
       /* May need to use refs to get hover functioning properly */
-      &:hover,
-      &:focus {
+      svg {
+        width: 19px;
+        height: 19px;
+        fill: ${props => props.theme.primaryLight};
+
+        &:hover {
         transform: translateY(-3px);
         fill: ${props => props.theme.main};
       }
-      svg {
-        width: 18px;
-        height: 18px;
-        fill: ${props => props.theme.primaryLight};
       }
     }
   }
@@ -46,7 +44,7 @@ const Social = () => (
     <StyledSocialList>
       {socialMedia && socialMedia.map(({platform, address}, i) => (
         <li key={i}>
-          <a href={address} aria-label={platform}>
+          <a href={address} target="_blank" aria-label={platform}>
             <Icon name={platform}/>
           </a>
         </li>

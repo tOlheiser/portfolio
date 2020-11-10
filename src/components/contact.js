@@ -190,17 +190,16 @@ const StyledSocialList = styled.div`
   li {
     padding-left: 30px;
     padding-right: 30px;
-    a {
-      /* May need to use refs to get hover functioning properly */
-      &:hover,
-      &:focus {
-        transform: translateY(-3px);
-        fill: ${props => props.theme.main};
-      }
+    
       svg {
         width: 25px;
         height: 25px;
         fill: ${props => props.theme.primaryLight};
+
+        &:hover,
+        &:focus {
+          transform: translateY(-3px);
+          fill: ${props => props.theme.main};
       }
     }
   }
@@ -258,7 +257,7 @@ const Contact = () => {
     <StyledSocialList>
       {socialMedia && socialMedia.map(({platform, address}, i) => (
           <li key={i}>
-            <a href={address} aria-label={platform}>
+            <a href={address} target="_blank" aria-label={platform}>
               <Icon name={platform}/>
             </a>
           </li>

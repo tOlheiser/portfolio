@@ -24,9 +24,11 @@ const StyledEmailDiv = styled.div`
     font-size: ${props => props.theme.xxs};
     letter-spacing: 0.1em;
     writing-mode: vertical-rl;
+    
     &:hover,
     &:focus {
       transform: translateY(-3px);
+      color: ${props => props.theme.main};
     }
   }
 `;

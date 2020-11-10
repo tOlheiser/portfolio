@@ -89,12 +89,12 @@ const Projects = () => (
             </StyledTagDiv>
             <StyledSocialList>
               <li>
-                <a href={project.sourceCode} aria-label="GitHub">
+                <a href={project.sourceCode} target="_blank" aria-label="GitHub">
                   <Icon name="GitHub"/>
                 </a>
               </li>
               <li>
-                <a href={project.demo} aria-label="Demo">
+                <a href={project.demo} target="_blank" aria-label="Demo">
                   <Icon name="External"/>
                 </a>
               </li>
