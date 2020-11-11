@@ -16,6 +16,7 @@ import IconStar from '../icons/star';
 import IconZap from '../icons/zap';
 import IconLogo from '../icons/logo';
 import IconPhone from '../icons/phone';
+import IconDevto from '../icons/devto';
 
 /* When Icon is called, the name of the SVG is passed in as props. 
 We pass the name of the SVG in a switch statement which returns the 
@@ -35,6 +36,8 @@ const Icon = ({ name }) => {
       return <IconExternal />;
     case 'Logo':
       return <IconLogo />;
+    case 'Devto':
+      return <IconDevto />;
     case 'Phone':
       return <IconPhone />;
     case 'AppStore':
