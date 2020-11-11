@@ -7,8 +7,6 @@ const PageWrapper = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  border: 1px solid yellow;
 `
 
 const LandingPage = () => (
