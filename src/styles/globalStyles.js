@@ -6,7 +6,7 @@ export const GlobalStyles = createGlobalStyle`
   ------------- */
   html {
     box-sizing: border-box;
-    /*font-size: 16px;    Decalre sizes in rem's, which is based off this. */
+    font-size: 16px;    /*Decalre sizes in rem's, which is based off this. */
   }
 
   *, *:before, *:after {
@@ -23,11 +23,11 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none;
   }
 
-  /*  This makes images responsive by default 
+  /*  This makes images responsive by default */
   img {
     max-width: 100%;
     height: auto;
-  }*/
+  }
 
   /* END CSS RESET
   ------------- */
@@ -47,7 +47,7 @@ export const GlobalStyles = createGlobalStyle`
 
 /* These class name styles DO work.*/
   .landingPageContainer {
-      height: 100vh;
+      /* height: 100vh; */
       background-color: #2C2A3C;
       display: flex;
       flex-direction: column;
@@ -71,26 +71,26 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   [class^="number-slide"],
-[class*=" number-slide"] {
-  background: grey;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 500;
-  height: 350px;
-  max-height: 100vh;
-  flex-wrap: wrap;
-  border-radius: 5px;
-}
+  [class*=" number-slide"] {
+    background: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 500;
+    height: 350px;
+    max-height: 100vh;
+    flex-wrap: wrap;
+    border-radius: 5px;
+  }
 
-.number-slide1 {
-  background: rgb(64, 175, 255);
-  background: linear-gradient(
-    128deg,
-    rgba(64, 175, 255, 1) 0%,
-    rgba(63, 97, 255, 1) 100%
-  );
-}
-`
+  .number-slide1 {
+    background: rgb(64, 175, 255);
+    background: linear-gradient(
+      128deg,
+      rgba(64, 175, 255, 1) 0%,
+      rgba(63, 97, 255, 1) 100%
+    );
+  }
+  `
