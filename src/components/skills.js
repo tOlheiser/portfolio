@@ -60,6 +60,7 @@ const Bubble = styled.div`
 
 const Skills = () => ( 
   <SectionContainer>
+    <div id="skills"></div>
     <SectionHeading heading="My Skills" subheading="Technologies I use" />
     <StyledRowDiv>
     {skills && skills.map(skill => (

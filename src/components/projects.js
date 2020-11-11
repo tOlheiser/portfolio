@@ -72,7 +72,8 @@ const StyledSocialList = styled.div`
 
 
 const Projects = () => ( 
-    <SectionContainer> {/* Section Container - Max width and c
+    <SectionContainer> 
+      <div id="projects"></div>{/* Section Container - Max width and c
     entered in 100vh container*/}
       <SectionHeading heading="Projects" subheading="See what I've done" />
 

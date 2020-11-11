@@ -224,6 +224,7 @@ const Contact = () => {
   
   return (
   <SectionContainer>
+    <div id="contact"></div>
     <SectionHeading heading="Contact Me" subheading="Get in Touch"/>
     <P>Feel free to reach out if you have any questions for me or if you just 
     wanted to say hi. I love talking anything development related and I'm happy 
@@ -253,7 +254,7 @@ const Contact = () => {
       <StyledSubmit type="submit" value="Send"/>
     </form> 
     </ColumnDiv>
-
+    
     <StyledSocialList>
       {socialMedia && socialMedia.map(({platform, address}, i) => (
           <li key={i}>

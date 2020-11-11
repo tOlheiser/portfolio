@@ -42,6 +42,7 @@ const P = styled(StyledP)`
 
 const About = () => ( 
   <SectionContainer>
+    <div id="about"></div>
     <SectionHeading heading="About Me" subheading="Introductions"/>
     <Content>
       <P>Hi there! My name's Tanner, and I'm an aspiring fullstack developer currently living in Regina, SK.
