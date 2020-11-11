@@ -14,6 +14,10 @@ export const socialMedia = [
   {
     platform: "Twitter",
     address: "https://twitter.com/OlheiserSK"
+  },
+  {
+    platform: "Devto",
+    address: "https://dev.to/"
   }
 ]
 
