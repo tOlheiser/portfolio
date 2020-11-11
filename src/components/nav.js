@@ -49,7 +49,7 @@ const StyledLogo = styled.div`
 const StyledUnorderedList = styled.ul`
   display: flex;
   
-  li {
+  li:not(:last-child) {
     color: ${props => props.theme.primaryLight};
     font-family: 'Source Code Pro', monospace;
     font-size: ${props => props.theme.xs};
@@ -63,9 +63,30 @@ const StyledUnorderedList = styled.ul`
   }
 
   a {
+    /* Hover effect from https://paulund.co.uk/css-animation-link-underline */
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: ${props => props.theme.main};
+      visibility: hidden;
+      transform: scaleX(0);
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover:before, &:focus:before {
+      visibility: visible;
+      transform: scaleX(1);
+    }
+
     &:hover, &:focus {
       color: ${props => props.theme.main};
       cursor: pointer;
+      outline: 0;
     }
   }
 `
