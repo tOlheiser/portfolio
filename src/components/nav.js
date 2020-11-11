@@ -8,29 +8,41 @@
 /* ! The amount of space between the sidebars and the edge of the screen 
 should be the same for the logo & nav links. */
 
-import { Link } from "gatsby"
 import React, { useState, useRef } from "react"
-import navLogo from "../assets/navLogo.svg"
 import StyledButton from "./button"
 import Burger from "./burger"
 import Menu from "./menu"
 import useOnClickOutside from '../hooks/useOnClickOutside'
 import styled from 'styled-components'
 import useViewport from '../hooks/useViewport'
+import Icon from './icons/icon'
 
 const StyledNav = styled.nav`
-  margin-top: 10px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center; 
-  padding: 0 40px;
+  padding: 20px 50px;
+
+  @media screen and (max-width: 620px) {
+    padding: 20px 30px;
+  }
 `
 
 const StyledLogo = styled.div`
-  @media screen and (max-width: 620px) {
-    padding-left: 30px
+  svg {
+    width: auto;
+    height: 60px;
+    fill: ${props => props.theme.main};
+
+    &:hover, &:focus {
+      cursor: pointer;
+
+      .cls-1, .cls-2 {
+        fill: ${props => props.theme.primaryLight};
+        cursor: pointer;
+      }
+    }
   }
 `
 
@@ -38,15 +50,23 @@ const StyledUnorderedList = styled.ul`
   display: flex;
   
   li {
-    color: #CCD6F6;
+    color: ${props => props.theme.primaryLight};
     font-family: 'Source Code Pro', monospace;
-    font-size: ${props => props.theme.xs}; /* 14px */
+    font-size: ${props => props.theme.xs};
     display: flex;
     align-items: center;
-    padding-right: 1.6em; 
+    margin-right: 1.6em; 
+
     &:last-child {
-      padding-right: 0;
+      margin-right: 0;
     }   
+  }
+
+  a {
+    &:hover, &:focus {
+      color: ${props => props.theme.main};
+      cursor: pointer;
+    }
   }
 `
 
@@ -59,12 +79,11 @@ const Nav = () => {
   useOnClickOutside(node, () => setOpen(false));
 
   return(
+    <div>
     <StyledNav>
       {/* Logo Container */}
       <StyledLogo> {/*stylesheet.logo */}
-          <Link to="/">
-            <img src={navLogo} alt="Tanner Olheiser's Logo" height="60px" />
-          </Link>
+            <Icon name="Logo"/>
       </StyledLogo>
 
       {viewportWidth < breakpoint ? 
@@ -74,16 +93,25 @@ const Nav = () => {
         </div>
         :
         <StyledUnorderedList>
-          <li>Work</li>
-          <li>Skills</li>
-          <li>About</li>
-          <li>Contact</li>
           <li>
-            <StyledButton>Resume</StyledButton>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a href="#skills">Skills</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+          <li>
+            <a href="../../public/static/Tanner's Resume.pdf" target="_Blank"><StyledButton>Resume</StyledButton></a>  
           </li>
         </StyledUnorderedList>
       }
     </StyledNav>
+    </div>
   )
 }
     
