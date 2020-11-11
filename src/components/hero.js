@@ -12,7 +12,6 @@ const Container = styled.section`
   align-self: center;
   justify-content: center;
   padding: 0 4rem;
-  border: 1px solid red;
 
   @media (max-width: 900px) {
     padding: 0 2.3rem;

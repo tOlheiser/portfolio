@@ -5,8 +5,7 @@ import Sidebar from './sidebar';
 const StyledEmailDiv = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  position: relative;
+
   /* Vertical Line */
   &:after {
     content: '';
@@ -22,7 +21,7 @@ const StyledEmailDiv = styled.div`
     padding: 10px;
     font-family: ${props => props.theme.monoFont};
     font-size: ${props => props.theme.xxs};
-    letter-spacing: 0.1em;
+    letter-spacing: 0.1rem;
     writing-mode: vertical-rl;
     
     &:hover,

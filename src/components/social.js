@@ -7,7 +7,6 @@ import {socialMedia} from '../config';
 const StyledSocialList = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   list-style: none;
   /* Vertical Line */
   &:after {
