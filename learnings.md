@@ -148,3 +148,6 @@ const Social = () => (
 1. Work with REMs. It makes life easier. I didn't start with rem, and when I went back to change this, it was pretty tedious.
 2. You only really need to make the headings responsive. You wouldn't scale down paragraph text generally. It's at the desired size on desktop & mobile.
 Tip: Given this: 'clamp(3rem, 6vw, 5.4rem)' - 3rem is the minimum, 5.4rem is the maximum. The middle value (6vw) is tuned to define how early/late the size of the text changes when you scale down the screen.
+
+## Issue: Overflow
+I noticed that, despite having overflow-x hidden, my page would still have an extra little bit of width, it would just be hidden. Giving my page containers 100vw caused this issue. Giving the containers a width of 100vw is unnecessary when it already takes up to space of the parent element (body), which has a width of 100%.
