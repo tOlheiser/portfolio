@@ -17,6 +17,7 @@ import styled from 'styled-components'
 import useViewport from '../hooks/useViewport'
 import Icon from './icons/icon'
 import resume from "../../public/static/resume.pdf"
+import Headroom from 'react-headroom'
 
 const StyledNav = styled.nav`
   display: flex;
@@ -102,11 +103,14 @@ const Nav = () => {
 
   return(
     <div>
+    <Headroom>
     <StyledNav>
       {/* Logo Container */}
+      
       <StyledLogo> {/*stylesheet.logo */}
             <Icon name="Logo"/>
       </StyledLogo>
+      
 
       {viewportWidth < breakpoint ? 
         <div ref={node}>
@@ -135,7 +139,9 @@ const Nav = () => {
           </li>
         </StyledUnorderedList>
       }
+      
     </StyledNav>
+    </Headroom>
     </div>
   )
 }
