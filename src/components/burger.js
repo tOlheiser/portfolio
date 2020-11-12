@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const StyledBurger = styled.button`
   /* Must be positioned absolute to work properly */
   position: absolute;
-  top: 25px;
+  top: 30px;
   right: 30px;
   display: flex;
   flex-direction: column;
@@ -17,9 +17,6 @@ const StyledBurger = styled.button`
   padding: 0;
   z-index: 10;
 
-  &:focus {
-    outline: none;
-  }
 
   div {
     width: 2rem;
@@ -36,7 +33,6 @@ const StyledBurger = styled.button`
 
     :nth-child(2) {
       opacity: ${({ open }) => open ? '0' : '1'};
-      transform: ${({ open }) => open ? 'translateX(20px)' : 'translateX(0)'};
     }
 
     :nth-child(3) {
