@@ -1,11 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import StyledButton from "./button";
+import resume from "../../public/static/resume.pdf"
 
 const StyledMenu = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #EFFFFA;
+  align-items: center;
+  background: ${props => props.theme.accentDark};
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
   height: 100vh;
   text-align: left;
@@ -21,22 +24,16 @@ const StyledMenu = styled.nav`
 }
 
 a {
-  font-size: 2rem;
-  text-transform: uppercase;
-  padding: 2rem 0;
+  font-size: 1.6rem;
+  padding: 2rem 2.5rem;
   font-weight: bold;
-  letter-spacing: 0.5rem;
-  color: #0D0C1D;
-  text-decoration: none;
+  letter-spacing: 0.2rem;
+  color: ${props => props.theme.primaryLight};
   transition: color 0.3s linear;
-  
-  @media (max-width: 576px) {
-    font-size: 1.5rem;
-    text-align: center;
-  }
+  font-family: ${props => props.theme.monoFont};
 
-  &:hover {
-    color: #343078;
+  &:hover, &:focus {
+    color: ${props => props.theme.main};
   }
 }
 `;
@@ -45,19 +42,44 @@ const Menu = ({ open }) => {
   return (
     <StyledMenu open={open}>
       <a href="/">
-        <span role="img" aria-label="about us">&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;</span>
-        About us
+        Projects
       </a>
       <a href="/">
-        <span role="img" aria-label="price">&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;</span>
-        Pricing
+        About
       </a>
       <a href="/">
-        <span role="img" aria-label="contact">&#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;</span>
+        Skills
+      </a>
+      <a href="/">
         Contact
       </a>
+      <a 
+        rel="noopener noreferrer"
+        href={resume} 
+        target="_blank"><StyledButton>Resume</StyledButton>
+      </a>  
     </StyledMenu>
   )
 }
 
 export default Menu;
+/*
+<li>
+  <a href="#projects">Projects</a>
+</li>
+<li>
+  <a href="#about">About</a>
+</li>
+<li>
+  <a href="#skills">Skills</a>
+</li>
+<li>
+  <a href="#contact">Contact</a>
+</li>
+<li>
+  <a 
+    rel="noopener noreferrer"
+    href={resume} 
+    target="_blank"><StyledButton>Resume</StyledButton></a>  
+</li>
+*/
