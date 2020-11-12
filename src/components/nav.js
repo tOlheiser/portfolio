@@ -7,6 +7,9 @@
 // NEXT: Get the Social Icons & Email sidebars setup.
 /* ! The amount of space between the sidebars and the edge of the screen 
 should be the same for the logo & nav links. */
+/* Get the current Y position. If Y > 50, reveal style
+--> Background transparent, border bottem */
+
 
 import React, { useState, useRef } from "react"
 import StyledButton from "./button"
@@ -24,7 +27,7 @@ const StyledNav = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center; 
-  padding: 20px 50px;
+  padding: 15px 50px;
 
   @media screen and (max-width: 620px) {
     padding: 20px 30px;
@@ -34,7 +37,7 @@ const StyledNav = styled.nav`
 const StyledLogo = styled.div`
   svg {
     width: auto;
-    height: 60px;
+    height: 50px;
     fill: ${props => props.theme.main};
 
     &:hover, &:focus {
@@ -96,6 +99,7 @@ const StyledUnorderedList = styled.ul`
 const Nav = () => {
   // Open/Close state for hamburger menu
   const [open, setOpen] = useState(false); // initial state = false
+  //const [top, onUnpin] = useState(true);
   const node = useRef();
   const { viewportWidth } = useViewport();
   const breakpoint = 620;
@@ -104,43 +108,43 @@ const Nav = () => {
   return(
     <div>
     <Headroom>
-    <StyledNav>
-      {/* Logo Container */}
-      
-      <StyledLogo> {/*stylesheet.logo */}
-            <Icon name="Logo"/>
-      </StyledLogo>
-      
+      <StyledNav>
+        {/* Logo Container */}
+        
+        <StyledLogo> {/*stylesheet.logo */}
+              <Icon name="Logo"/>
+        </StyledLogo>
+        
 
-      {viewportWidth < breakpoint ? 
-        <div ref={node}>
-          <Burger open={open} setOpen={setOpen} />
-          <Menu open={open} setOpen={setOpen} />
-        </div>
-        :
-        <StyledUnorderedList>
-          <li>
-            <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#about">About</a>
-          </li>
-          <li>
-            <a href="#skills">Skills</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
-          <li>
-            <a 
-              rel="noopener noreferrer"
-              href={resume} 
-              target="_blank"><StyledButton>Resume</StyledButton></a>  
-          </li>
-        </StyledUnorderedList>
-      }
-      
-    </StyledNav>
+        {viewportWidth < breakpoint ? 
+          <div ref={node}>
+            <Burger open={open} setOpen={setOpen} />
+            <Menu open={open} setOpen={setOpen} />
+          </div>
+          :
+          <StyledUnorderedList>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="#about">About</a>
+            </li>
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+            </li>
+            <li>
+              <a 
+                rel="noopener noreferrer"
+                href={resume} 
+                target="_blank"><StyledButton>Resume</StyledButton></a>  
+            </li>
+          </StyledUnorderedList>
+        }
+        
+      </StyledNav>
     </Headroom>
     </div>
   )
