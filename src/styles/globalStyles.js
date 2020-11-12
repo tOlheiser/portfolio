@@ -7,6 +7,7 @@ export const GlobalStyles = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 16px;    /*Decalre sizes in rem's, which is based off this. */
+    scroll-behavior: smooth;
   }
 
   *, *:before, *:after {
@@ -93,4 +94,5 @@ export const GlobalStyles = createGlobalStyle`
       rgba(63, 97, 255, 1) 100%
     );
   }
+
   `
