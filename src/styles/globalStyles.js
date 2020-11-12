@@ -95,4 +95,9 @@ export const GlobalStyles = createGlobalStyle`
     );
   }
 
+  /* When scrolling up, give transparent bg and shadow */
+  .headroom--pinned {
+    background: rgba(44, 42, 60, 0.9);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
   `
