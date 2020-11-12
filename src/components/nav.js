@@ -16,6 +16,7 @@ import useOnClickOutside from '../hooks/useOnClickOutside'
 import styled from 'styled-components'
 import useViewport from '../hooks/useViewport'
 import Icon from './icons/icon'
+import resume from "../../public/static/resume.pdf"
 
 const StyledNav = styled.nav`
   display: flex;
@@ -127,7 +128,10 @@ const Nav = () => {
             <a href="#contact">Contact</a>
           </li>
           <li>
-            <a href="../../public/static/Tanner's Resume.pdf" target="_Blank"><StyledButton>Resume</StyledButton></a>  
+            <a 
+              rel="noopener noreferrer"
+              href={resume} 
+              target="_blank"><StyledButton>Resume</StyledButton></a>  
           </li>
         </StyledUnorderedList>
       }
