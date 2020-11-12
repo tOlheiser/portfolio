@@ -151,3 +151,20 @@ Tip: Given this: 'clamp(3rem, 6vw, 5.4rem)' - 3rem is the minimum, 5.4rem is the
 
 ## Issue: Overflow
 I noticed that, despite having overflow-x hidden, my page would still have an extra little bit of width, it would just be hidden. Giving my page containers 100vw caused this issue. Giving the containers a width of 100vw is unnecessary when it already takes up to space of the parent element (body), which has a width of 100%.
+
+## Importing PDFs
+Something that was giving me far too much trouble was importing my pdf into my site, then linking to it. 
+
+Fix: In the javascript file you want to use, you want to import the pdf you'd like to use:
+```js
+import resume from "../../public/static/resume.pdf"
+```
+
+Then in the href source:
+```js
+<a href={resume}>View Resume</a>
+```
+
+Having the patience reading the docs would have saved me some time... whereas instead I chose to jump right to google.
+
+*"With webpack you can import a file right in a JavaScript module. This tells webpack to include that file in the bundle. Unlike CSS imports, importing a file gives you a string value. This imported file’s value is the final path you can reference in your code, e.g. as the src attribute of an image or the href of a link to a PDF."*
