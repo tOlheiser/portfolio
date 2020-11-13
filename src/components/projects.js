@@ -56,15 +56,14 @@ const StyledSocialList = styled.div`
     }
     a {
       /* May need to use refs to get hover functioning properly */
-      &:hover,
-      &:focus {
-        transform: translateY(-3px);
-        fill: ${props => props.theme.main};
-      }
       svg {
         width: 20px;
         height: 20px;
         fill: ${props => props.theme.primaryLight};
+
+        &:hover, &:focus {
+          fill: ${props => props.theme.main};
+        }
       }
     }
   }
