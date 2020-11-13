@@ -70,6 +70,7 @@ const StyledUnorderedList = styled.ul`
   a {
     /* Hover effect from https://paulund.co.uk/css-animation-link-underline */
     position: relative;
+    transition: color 0.3s linear;
     &:before {
       content: "";
       position: absolute;
@@ -139,7 +140,8 @@ const Nav = () => {
               <a 
                 rel="noopener noreferrer"
                 href={resume} 
-                target="_blank"><StyledButton>Resume</StyledButton></a>  
+                target="_blank"><StyledButton>Resume</StyledButton>
+              </a>  
             </li>
           </StyledUnorderedList>
         }
