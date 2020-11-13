@@ -3,10 +3,10 @@ export const theme = {
   mobile: '576px',
   // Colours
   primaryDark: '#2C2A3C',
+  accentDark: '#373B54',
   primaryLight: '#CCD6F6',
   accentLight: '#8892B0',
   main: "#64ffDA",
-  accentMain: '#343078',
 
   // Font Related
   primaryFont: "'Source Sans Pro', sans-serif",
