@@ -17,11 +17,10 @@ const StyledBurger = styled.button`
   padding: 0;
   z-index: 10;
 
-
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ open }) => open ? '#0D0C1D' : '#EFFFFA'};
+    background: ${({ open }) => open ? '#CCD6F6' : '#EFFFFA'};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -39,7 +38,7 @@ const StyledBurger = styled.button`
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
   }
-`;
+`
 
 // open & setOpen are destructured
 const Burger = ({ open, setOpen }) => {
