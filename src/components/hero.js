@@ -8,18 +8,35 @@ const Container = styled.section`
   height: 100%;
   display: flex;
   flex-direction: column;
-  margin: 0 2.3rem 7rem 2.3rem;
-  align-self: center;
-  justify-content: center;
-  padding: 0 4rem;
+  margin: 0 30px 0 30px; /* Margins for mobile view */
+  align-self: center; /* centers container on page */
+  justify-content: center; /* centers content on y axis on page */
 
-  @media (max-width: 900px) {
-    padding: 0 2.3rem;
+  div {
+    flex-direction: column;
+    align-self: center;
   }
+
+  h4 {
+    padding-bottom: 1.3rem;
+  }
+
+  p {
+    padding: 1.8rem 0 2.6rem 0;
+  }
+
+  @media screen and (min-width: 620px) {
+    width: calc(100% - 100px);
+  }
+
+  @media screen and (min-width: 900px) {
+    width: calc(100% - 220px);
+  }
+
 `
 
 const Accent = styled.span`
-  color: #8892B0;
+  color: ${props => props.theme.accentLight};
 `
 
 const StyledLgButton = styled(StyledButton)`
@@ -28,14 +45,25 @@ const StyledLgButton = styled(StyledButton)`
   line-height: 16px;
 `
 
+const EM = styled.span`
+  color: ${props => props.theme.main};
+`
+
 const Hero = () => (
+  
   <Container>
-    <Subheading>Hi, my name is</Subheading>
-    <StyledH1>Tanner Olheiser.<br/>
-    <Accent>I'm a full-stack web developer.</Accent></StyledH1>
-    <StyledP>I'm a fullstack developer based in Regina, SK specializing in building exceptional web applications using React, Express, Node, and MongoDB.</StyledP>
-    <StyledLgButton>See Projects</StyledLgButton>
+    <div>
+      <Subheading>Hi, my name is</Subheading>
+      <StyledH1>Tanner Olheiser.<br/>
+      <Accent>I'm a full-stack web developer.</Accent></StyledH1>
+      <StyledP>I'm a full-stack developer currently residing in Regina, SK. I craft elegant solutions with an emphasis on <EM>speed</EM>, <EM>accessibility</EM>, and <EM>responsive design</EM> using the <EM>MERN</EM> stack (<EM>MongoDB</EM>, <EM>Express</EM>, <EM>React</EM>, <EM>Node</EM>).
+      </StyledP>
+      <a href="#projects">
+        <StyledLgButton>See Projects</StyledLgButton>
+      </a> 
+    </div>
   </Container>
+  
 )
 
 export default Hero
