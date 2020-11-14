@@ -39,33 +39,19 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background-color: #2C2A3C;
+    background-color: ${props => props.theme.primaryDark};
     /* Making the body's position relative & declaring overflow as hidden 
     will prevent a horizontal scrollbar from appearing when using translateX*/
     position: relative;
     overflow-x: hidden;  /*Allow overflow vertically but not horizontally. */
   }
 
-/* These class name styles DO work.*/
   .landingPageContainer {
       /* height: 100vh; */
-      background-color: #2C2A3C;
+      background-color: ${props => props.theme.primaryDark};
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
   }
-
-
-
-  /* Original Page Container
-    .pageContainer { 
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-  }
-  */
 
   .center {
       align-items: center;
