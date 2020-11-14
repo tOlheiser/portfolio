@@ -168,3 +168,15 @@ Then in the href source:
 Having the patience reading the docs would have saved me some time... whereas instead I chose to jump right to google.
 
 *"With webpack you can import a file right in a JavaScript module. This tells webpack to include that file in the bundle. Unlike CSS imports, importing a file gives you a string value. This imported file’s value is the final path you can reference in your code, e.g. as the src attribute of an image or the href of a link to a PDF."*
+
+## CSS Properties to Play With for Responsive Design
+
+**MIN()** - Chooses the smallest of the two values.
+*width: min(500px, 70%)*
+**MAX()** - Opposite of min (biggest of the two values).
+*Better alternative to using two lines to write width & max-width.*
+**CLAMP()** - min size, ideal size, max size
+*Typically you'd use an absolute min or max size (px, em, rem, etc), and then place a width the portion of the container or viewport in the middle. The makes it scale.*
+**ch** - character width. you can apply this to the width of a paragraph element so you don't get lengths that are too long/short
+
+Note: Do NOT use viewport units for font sizes. It's bad for usability because if the user tries to magnify the content, the text won't scale. 
