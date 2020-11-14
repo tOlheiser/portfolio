@@ -12,12 +12,14 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100vw - 160px);
-  padding: 0 1.7rem;
+  margin: 0 30px 0 30px;
 
-  @media (max-width: 900px) {
-    width: 100%;
-    padding: 0 2.3rem;
+  @media screen and (min-width: 620px) {
+    width: calc(100% - 100px);
+  }
+
+  @media screen and (min-width: 900px) {
+    width: calc(100% - 220px);
   }
 `;
 
