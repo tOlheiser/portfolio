@@ -5,6 +5,11 @@ import Icon from "./icons/icon";
 import projects from "../content/projects";
 import SectionHeading from "./sectionHeading";
 import SectionContainer from "./sectionContainer";
+import calculator from "../images/calculator.JPG";
+import toDoList from "../images/todolist.JPG";
+import hackerNewsClone from "../images/hackernews.JPG";
+import certifi from "../images/certifi.JPG";
+
 // import PropTypes from 'prop-types'
 
 const H3 = styled(StyledH3)`
@@ -71,39 +76,39 @@ const StyledSocialList = styled.div`
 
 
 const Projects = () => ( 
-    <SectionContainer> 
-      <div id="projects"></div>{/* Section Container - Max width and c
-    entered in 100vh container*/}
-      <SectionHeading heading="Projects" subheading="See what I've done" />
+  <SectionContainer> 
+    <div id="projects"></div>{/* Section Container - Max width and c
+  entered in 100vh container*/}
+    <SectionHeading heading="Projects" subheading="See what I've done" />
 
-      <CardDiv>
-        {projects && projects.map((project) => (
-          <ProjectCard>
-            <StyledH3>{project.name}</StyledH3>
-            <ProjectPhoto/>
-            <StyledP>{project.description}</StyledP>
-            <StyledTagDiv>
-              {project.tags.map(tag => (
-                <StyledTags>{tag}</StyledTags>
-              ))}
-            </StyledTagDiv>
-            <StyledSocialList>
-              <li>
-                <a href={project.sourceCode} target="_blank" aria-label="GitHub">
-                  <Icon name="GitHub"/>
-                </a>
-              </li>
-              <li>
-                <a href={project.demo} target="_blank" aria-label="Demo">
-                  <Icon name="External"/>
-                </a>
-              </li>
-            </StyledSocialList> 
-          </ProjectCard>
-        ))}
-      </CardDiv>
+    <CardDiv>
+      {projects && projects.map((project) => (
+        <ProjectCard>
+          <StyledH3>{project.name}</StyledH3>
+          <ProjectPhoto/>
+          <StyledP>{project.description}</StyledP>
+          <StyledTagDiv>
+            {project.tags.map(tag => (
+              <StyledTags>{tag}</StyledTags>
+            ))}
+          </StyledTagDiv>
+          <StyledSocialList>
+            <li>
+              <a href={project.sourceCode} target="_blank" aria-label="GitHub">
+                <Icon name="GitHub"/>
+              </a>
+            </li>
+            <li>
+              <a href={project.demo} target="_blank" aria-label="Demo">
+                <Icon name="External"/>
+              </a>
+            </li>
+          </StyledSocialList> 
+        </ProjectCard>
+      ))}
+    </CardDiv>
 
-    </SectionContainer>
+  </SectionContainer>
 )
 
 export default Projects
