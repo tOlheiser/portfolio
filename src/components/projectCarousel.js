@@ -5,6 +5,8 @@ import { useKeenSlider } from 'keen-slider/react'
 import projects from '../content/projects'
 import SectionHeading from './sectionHeading'
 
+/* This component breaks if nested in another flex element. */
+
 // 1. Find a 'tap gesture' svg to place on top right corner of each card.
 // 2. Determine a colour theme then add a corresponding transparent-gradient.
 // 3. After project is completed, use a photo as the background.
@@ -54,7 +56,7 @@ const ProjectCarousel = (props) => {
         {projects && projects.map(project => (
           <div className="keen-slider__slide number-slide1">
             <CarouselHeading>{project.name}</CarouselHeading><br/>
-            <CarouselTagline>Track & manage your certifications, and apply for jobs.</CarouselTagline>
+            <CarouselTagline>{project.tagline}</CarouselTagline>
           </div>
         ))}
       </div>
