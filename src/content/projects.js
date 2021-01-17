@@ -6,7 +6,8 @@ const projects = [
     tagline: "Manage your certifications.",
     tags: ["MongoDB", "Express", "Node", "React", "Web Scraping"],
     sourceCode: "link to github page",
-    demo: "link to project demo"
+    demo: "http://olheiser.ca/certifi/",
+    image: "../../static/certifi.JPG"
   },
   {
     name: "Hacker News Clone",
@@ -15,7 +16,8 @@ const projects = [
     tagline: "View top posts, new posts, and user history in.",
     tags: ["React", "Async", "Hacker News API", "React Router"],
     sourceCode: "https://github.com/tOlheiser/react-hackerNews-clone",
-    demo: "https://olheiser-react-hackernews.netlify.app/"
+    demo: "https://olheiser-react-hackernews.netlify.app/",
+    image: "../../static/hackernews.JPG"
   },
   {
     name: "To Do List",
@@ -24,7 +26,8 @@ const projects = [
     tags: ["React"],
     tagline: "Add, track, and delete tasks.",
     sourceCode: "https://github.com/tOlheiser/react-toDo-list",
-    demo: "https://olheiser-react-todolist.netlify.app/"
+    demo: "https://olheiser-react-todolist.netlify.app/",
+    image: "../../static/todolist.JPG"
   },
   {
     name: "Calculator",
@@ -33,7 +36,8 @@ const projects = [
     tags: ["React"],
     tagline: "A basic, stylish calculator.",
     sourceCode: "https://github.com/tOlheiser/react-calculator",
-    demo: "https://olheiser-react-calculator.netlify.app/"
+    demo: "https://olheiser-react-calculator.netlify.app/",
+    image: "../../static/calculator.JPG"
   }
 ];
 
