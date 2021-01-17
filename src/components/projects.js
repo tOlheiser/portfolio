@@ -5,8 +5,6 @@ import Icon from "./icons/icon";
 import projects from "../content/projects";
 import SectionHeading from "./sectionHeading";
 import SectionContainer from "./sectionContainer";
-import Img from "gatsby-image";
-import {useStaticQuery, graphql} from "gatsby";
 
 const H3 = styled(StyledH3)`
 font-family: ${props => props.theme.primaryFont};
