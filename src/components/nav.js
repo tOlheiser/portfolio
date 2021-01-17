@@ -19,7 +19,7 @@ import useOnClickOutside from '../hooks/useOnClickOutside'
 import styled from 'styled-components'
 import useViewport from '../hooks/useViewport'
 import Icon from './icons/icon'
-import resume from "../../public/static/resume.pdf"
+import resume from "../../static/resume.pdf"
 import Headroom from 'react-headroom'
 
 const StyledNav = styled.nav`
