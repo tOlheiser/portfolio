@@ -2,9 +2,9 @@ const projects = [
   {
     name: "Certifi",
     //photo: "photo address",
-    description: "Having worked in the oil & gas industry, keeping track of your safety tickets is a hassle. Forgot to bring your tickets to the lease? You don't get to work. With this app you can add electronic versions of you tickets, track expiring tickets, and compare prices of safety courses near you.",
+    description: "Having worked in the oil & gas industry, keeping track of your safety tickets is a hassle. Forget to bring your tickets to the lease? You don't get to work. With this app you can add electronic versions of your tickets and track when they expire.",
     tagline: "Manage your certifications.",
-    tags: ["MongoDB", "Express", "Node", "React", "Web Scraping"],
+    tags: ["MySQL", "PHP", "JavaScript"],
     sourceCode: "link to github page",
     demo: "http://olheiser.ca/certifi/",
     image: "../../static/certifi.JPG"
@@ -12,8 +12,8 @@ const projects = [
   {
     name: "Hacker News Clone",
     //photo: "photo address",
-    description: "Completed as part of Tyler McGinnis' React course, which built on my React knowledge by introducing concepts such as Higher Order Components, Render Props, Context, and React Router. This was also my introduction to fetching data from an API using asynchronous programming.",
-    tagline: "View top posts, new posts, and user history in.",
+    description: "Completed as part of Tyler McGinnis' React course, which introduced concepts such as Higher Order Components, Render Props, Context, React Router, and using an API to fetch data.",
+    tagline: "View top posts, new posts, and user history.",
     tags: ["React", "Async", "Hacker News API", "React Router"],
     sourceCode: "https://github.com/tOlheiser/react-hackerNews-clone",
     demo: "https://olheiser-react-hackernews.netlify.app/",
@@ -22,7 +22,7 @@ const projects = [
   {
     name: "To Do List",
     //photo: "photo address",
-    description: "My take on the classic 'To-do List' project. In this project I got my feet wet rendering lists and conditionally displaying list data. Managing state was also far more complex here than in a calculator.",
+    description: "My take on the classic 'To-do List' project. In this project I wet my feet rendering lists and conditionally displaying data.",
     tags: ["React"],
     tagline: "Add, track, and delete tasks.",
     sourceCode: "https://github.com/tOlheiser/react-toDo-list",
@@ -32,9 +32,9 @@ const projects = [
   {
     name: "Calculator",
     //photo: "photo address",
-    description: "First React app built after reading the React documentation. It was a great exercise in learning the component lifecycle and how to pass data between components.",
+    description: "First React app built after reading the React documentation. It was a great exercise in learning the component lifecycle and passing data between components.",
     tags: ["React"],
-    tagline: "A basic, stylish calculator.",
+    tagline: "A basic stylish calculator.",
     sourceCode: "https://github.com/tOlheiser/react-calculator",
     demo: "https://olheiser-react-calculator.netlify.app/",
     image: "../../static/calculator.JPG"
