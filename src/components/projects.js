@@ -5,16 +5,12 @@ import Icon from "./icons/icon";
 import projects from "../content/projects";
 import SectionHeading from "./sectionHeading";
 import SectionContainer from "./sectionContainer";
-import calculator from "../images/calculator.JPG";
-import toDoList from "../images/todolist.JPG";
-import hackerNewsClone from "../images/hackernews.JPG";
-import certifi from "../images/certifi.JPG";
-
-// import PropTypes from 'prop-types'
+import Img from "gatsby-image";
+import {useStaticQuery, graphql} from "gatsby";
 
 const H3 = styled(StyledH3)`
 font-family: ${props => props.theme.primaryFont};
-font-size: 30px;
+font-size: 31px;
 color: ${props => props.theme.primaryLight};
 `
 
@@ -23,14 +19,6 @@ const CardDiv = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-`
-
-const ProjectPhoto = styled.div`
-  width: 600px;
-  max-width: 600px;
-  height: 350px;
-  background-color: ${props => props.theme.main};
-  margin-bottom: 20px;
 `
 
 const StyledTagDiv = styled.div`
@@ -85,7 +73,7 @@ const Projects = () => (
       {projects && projects.map((project) => (
         <ProjectCard>
           <StyledH3>{project.name}</StyledH3>
-          <ProjectPhoto/>
+          <img src={project.image} alt={project.name}/>
           <StyledP>{project.description}</StyledP>
           <StyledTagDiv>
             {project.tags.map(tag => (
