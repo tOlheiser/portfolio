@@ -5,6 +5,12 @@ import SectionContainer from "./sectionContainer";
 import { StyledP } from "../styles/contentTags";
 import PropTypes from 'prop-types';
 
+const Image = styled.img`
+  width: auto;
+  height: 350px;
+  border-radius: 5px;
+`
+
 const StyledSectionDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -50,7 +56,8 @@ const About = () => (
       <br/><br/>What I really love about fullstack development is that I have the skills to bring ideas & dreams into reality. It brings me pride to know how everything works, from the design process, to how the front-end brings your pages to life, and how the back-end delivers those pages to the user.
 
       <br/><br/>My ambition is to continue to expand on my skillset and apply it in an environment where I'm doing interesting, meaningful work on a daily basis.</P>
-      <PhotoDiv/>
+      {/*<PhotoDiv/>*/}
+      <Image src="../../static/tanner.jpg" alt="Tanner Olheiser" />
     </Content>
   </SectionContainer>
 );
