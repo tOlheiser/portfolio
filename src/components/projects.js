@@ -14,14 +14,16 @@ color: ${props => props.theme.primaryLight};
 
 const CardDiv = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
 `
 
 const StyledTagDiv = styled.div`
   text-align: right;
+  padding-top: 1.2em;
   p {
+    padding-left: .3em;
     &:last-of-type {
       padding-right: 0;
     }
@@ -29,8 +31,22 @@ const StyledTagDiv = styled.div`
 `
 
 const ProjectCard = styled.div`
-  max-width: 600px;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid yellow;
   margin: 0 30px;
+
+  &:nth-child(odd) {
+    border: 1px solid green;
+    flex-direction: row-reverse;
+  }
+
+
+  article {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+  }
 `
 
 const StyledSocialList = styled.div`
@@ -70,26 +86,29 @@ const Projects = () => (
     <CardDiv>
       {projects && projects.map((project) => (
         <ProjectCard>
-          <StyledH3>{project.name}</StyledH3>
-          <img src={project.image} alt={project.name}/>
-          <StyledP>{project.description}</StyledP>
-          <StyledTagDiv>
-            {project.tags.map(tag => (
-              <StyledTags>{tag}</StyledTags>
-            ))}
-          </StyledTagDiv>
-          <StyledSocialList>
-            <li>
-              <a href={project.sourceCode} target="_blank" aria-label="GitHub">
-                <Icon name="GitHub"/>
-              </a>
-            </li>
-            <li>
-              <a href={project.demo} target="_blank" aria-label="Demo">
-                <Icon name="External"/>
-              </a>
-            </li>
-          </StyledSocialList> 
+          
+          <img src={project.image} alt={project.name} border="2px solid #fff"/>
+          <article>
+            <StyledH3>{project.name}</StyledH3>
+            <StyledP>{project.description}</StyledP>
+            <StyledTagDiv>
+              {project.tags.map(tag => (
+                <StyledTags>{tag}</StyledTags>
+              ))}
+            </StyledTagDiv>
+            <StyledSocialList>
+              <li>
+                <a href={project.sourceCode} target="_blank" aria-label="GitHub">
+                  <Icon name="GitHub"/>
+                </a>
+              </li>
+              <li>
+                <a href={project.demo} target="_blank" aria-label="Demo">
+                  <Icon name="External"/>
+                </a>
+              </li>
+            </StyledSocialList> 
+          </article>
         </ProjectCard>
       ))}
     </CardDiv>
