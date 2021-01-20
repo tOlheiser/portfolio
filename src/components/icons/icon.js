@@ -17,6 +17,9 @@ import IconZap from '../icons/zap';
 import IconLogo from '../icons/logo';
 import IconPhone from '../icons/phone';
 import IconDevto from '../icons/devto';
+import IconFrontend from '../icons/frontend';
+import IconBackend from '../icons/backend';
+import IconTooling from '../icons/tooling';
 
 /* When Icon is called, the name of the SVG is passed in as props. 
 We pass the name of the SVG in a switch statement which returns the 
@@ -40,6 +43,12 @@ const Icon = ({ name }) => {
       return <IconDevto />;
     case 'Phone':
       return <IconPhone />;
+    case 'Front-end':
+      return <IconFrontend />;
+    case 'Back-end':
+      return <IconBackend />;    
+    case 'Tooling':
+      return <IconTooling/>; 
     case 'AppStore':
       return <IconAppStore />;
     case 'Folder':
