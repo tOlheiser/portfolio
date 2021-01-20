@@ -17,7 +17,7 @@ const StyledSectionDiv = styled.div`
   align-items: center;
   width: 80%;
 `;
-
+/* Remove flex wrap then add a media query that changes this to a column. */
 const Content = styled.article`
   display: flex;
   flex-direction: row;
@@ -25,12 +25,14 @@ const Content = styled.article`
   margin-bottom: 60px;
   flex-wrap: wrap;
   justify-content: center;
+  border: 1px solid orange;
   
-
+/*
   @media screen and (max-width: 940px) {
     flex-direction: column;
     align-items: center;
-  }
+    
+  }*/
 `;
 
 const PhotoDiv = styled.div`
@@ -43,19 +45,25 @@ const PhotoDiv = styled.div`
 
 const P = styled(StyledP)`
   max-width: 600px;
-  margin-right: 40px;
+  border: 1px solid red;
+
+  @media only screen and (min-width: 1168px) {
+    margin-right: 40px;
+  }
 `;
 
 const About = () => ( 
   <SectionContainer>
     <div id="about"></div>
     <SectionHeading heading="About Me" subheading="Introductions"/>
+    {/* P and Image are siblings; Content is the parent */}
     <Content>
-      <P>Hi there! My name's Tanner, and I'm an aspiring fullstack developer currently living in Regina, SK.
+      <P>Hi there! My name's Tanner, and I'm an aspiring front-end developer currently living in Regina, SK. My background is in the oil & gas industry where I developed my ability to communicate and work within a team effectively.<br/>
 
-      <br/><br/>What I really love about fullstack development is that I have the skills to bring ideas & dreams into reality. It brings me pride to know how everything works, from the design process, to how the front-end brings your pages to life, and how the back-end delivers those pages to the user.
+      <br/>I love coding. I find it incredibly stimulating. Developing an app that people use and admire is satisfying and completely worth the time and effort. My current focus is becoming exceptionally skilled with React Hooks and learning about the JAMStack and serverless architectures.
+      <br/>
 
-      <br/><br/>My ambition is to continue to expand on my skillset and apply it in an environment where I'm doing interesting, meaningful work on a daily basis.</P>
+      <br/>When I'm not coding in my spare time I enjoy practicing Muay Thai & Jiu Jitsu, creating a comic book with friends, and reading manga.</P>
       {/*<PhotoDiv/>*/}
       <Image src="../../static/tanner.jpg" alt="Tanner Olheiser" />
     </Content>
