@@ -40,6 +40,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background-color: ${props => props.theme.primaryDark};
+    /* Alternate: #2D2A3D */
     /* Making the body's position relative & declaring overflow as hidden 
     will prevent a horizontal scrollbar from appearing when using translateX*/
     position: relative;
