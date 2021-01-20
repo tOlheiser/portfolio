@@ -7,9 +7,15 @@ import SectionHeading from "./sectionHeading";
 import SectionContainer from "./sectionContainer";
 
 const H3 = styled(StyledH3)`
-font-family: ${props => props.theme.primaryFont};
-font-size: 31px;
-color: ${props => props.theme.primaryLight};
+  font-family: ${props => props.theme.primaryFont};
+  font-size: 31px;
+  color: ${props => props.theme.primaryLight};
+  display: ${props => props.colH3 && "none"};
+
+  @media only screen and (min-width: 1385px) {
+    display: ${props => props.colH3 && "none"};
+  }
+
 `
 
 const CardDiv = styled.div`
@@ -31,22 +37,38 @@ const StyledTagDiv = styled.div`
 `
 
 const ProjectCard = styled.div`
-  display: flex;
-  flex-direction: row;
-  border: 1px solid yellow;
-  margin: 0 30px;
-
-  &:nth-child(odd) {
-    border: 1px solid green;
-    flex-direction: row-reverse;
-  }
-
-
-  article {
     display: flex;
     flex-direction: column;
-    width: 500px;
-  }
+    margin-bottom: 4em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+    }
+
+    img {
+      border-radius: 5px;
+    }
+
+  @media only screen and (min-width: 1385px) {
+    flex-direction: row;
+    margin: 0 30px;
+    margin-bottom: 4em;
+
+    &:nth-child(odd) {
+      flex-direction: row-reverse;
+    }
+
+    article {
+      max-width: 500px;
+    }
+}
+
 `
 
 const StyledSocialList = styled.div`
@@ -87,9 +109,10 @@ const Projects = () => (
       {projects && projects.map((project) => (
         <ProjectCard>
           
-          <img src={project.image} alt={project.name} border="2px solid #fff"/>
+          <H3 colH3>{project.name}</H3>
+          <img src={project.image} alt={project.name} />
           <article>
-            <StyledH3>{project.name}</StyledH3>
+            <H3 rowH3>{project.name}</H3>
             <StyledP>{project.description}</StyledP>
             <StyledTagDiv>
               {project.tags.map(tag => (
