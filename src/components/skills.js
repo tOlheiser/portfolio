@@ -5,6 +5,7 @@ import SectionContainer from "./sectionContainer";
 import PropTypes from 'prop-types';
 import { StyledH3 } from "../styles/contentTags";
 import skills from "../content/skillContent";
+import Icon from "./icons/icon";
 
 const StyledSectionDiv = styled.div`
   display: flex;
@@ -56,6 +57,12 @@ const Bubble = styled.div`
   position: relative;
   top: -50px;
   margin: 0 auto;
+
+  svg {
+    height: 50px;
+    position: relative;
+    top: 25px;
+  }
 `
 
 const Skills = () => ( 
@@ -65,7 +72,10 @@ const Skills = () => (
     <StyledRowDiv>
     {skills && skills.map(skill => (
       <CardContainer>
-        <Bubble bgColor={skill.iconBackground}/>
+        <Bubble bgColor={skill.iconBackground}>
+          <Icon name={skill.title} />
+        </Bubble>
+        
         <H3>{skill.title}</H3>
         {skill.technologies.map(tech => (
           <li key={tech.i}><strong>{tech.category}:</strong> {tech.item}</li>
