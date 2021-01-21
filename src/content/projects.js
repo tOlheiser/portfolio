@@ -7,7 +7,8 @@ const projects = [
     tags: ["MySQL", "PHP", "JavaScript"],
     sourceCode: "link to github page",
     demo: "http://olheiser.ca/certifi/",
-    image: "../../static/certifi.JPG"
+    image: "../../static/certifi.JPG",
+    colImage: "../../static/colCertifi.jpg"
   },
   {
     name: "Hacker News Clone",
@@ -17,7 +18,8 @@ const projects = [
     tags: ["React", "Async", "Hacker News API", "React Router"],
     sourceCode: "https://github.com/tOlheiser/react-hackerNews-clone",
     demo: "https://olheiser-react-hackernews.netlify.app/",
-    image: "../../static/hackernews.JPG"
+    image: "../../static/hackernews.JPG",
+    colImage: "../../static/colHackernews.jpg"
   },
   {
     name: "To Do List",
@@ -27,7 +29,8 @@ const projects = [
     tagline: "Add, track, and delete tasks.",
     sourceCode: "https://github.com/tOlheiser/react-toDo-list",
     demo: "https://olheiser-react-todolist.netlify.app/",
-    image: "../../static/todolist.JPG"
+    image: "../../static/todolist.JPG",
+    colImage: "../../static/colTodolist.jpg"
   },
   {
     name: "Calculator",
@@ -37,7 +40,8 @@ const projects = [
     tagline: "A basic stylish calculator.",
     sourceCode: "https://github.com/tOlheiser/react-calculator",
     demo: "https://olheiser-react-calculator.netlify.app/",
-    image: "../../static/calculator.JPG"
+    image: "../../static/calculator.JPG",
+    colImage: "../../static/colCalculator.jpg"
   }
 ];
 
