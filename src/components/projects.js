@@ -43,23 +43,19 @@ const StyledTagDiv = styled.div`
 `
 
 const ProjectCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4em;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  article {
     display: flex;
     flex-direction: column;
-    margin-bottom: 4em;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    article {
-      display: flex;
-      flex-direction: column;
-      max-width: 545px;
-    }
-
-    img {
-      border-radius: 5px;
-    }
+    max-width: 545px;
+  }
 
   @media only screen and (min-width: 1385px) {
     flex-direction: row;
@@ -83,6 +79,7 @@ const ProjectCard = styled.div`
 
     article {
       max-width: 500px;
+      justify-content: center;
     }
 }
 
