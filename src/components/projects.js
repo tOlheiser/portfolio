@@ -18,6 +18,12 @@ const H3 = styled(StyledH3)`
 
 `
 
+/* Dynamically pass in the href's of the project photos 
+Alternatively, replace the image with a div. The div with 
+be given a background image. I determine which source to 
+pass in based on props and if its in a media query. */
+
+
 const CardDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -48,7 +54,7 @@ const ProjectCard = styled.div`
     article {
       display: flex;
       flex-direction: column;
-      max-width: 600px;
+      max-width: 545px;
     }
 
     img {
@@ -98,6 +104,18 @@ const StyledSocialList = styled.div`
   }
 `;
 
+const ProjectImage = styled.div`
+  background-image: url(${props => props.colImage});
+  height: 290px;
+  width: 545px;
+
+  @media only screen and (min-width: 1385px) {
+    background-image: url(${props => props.rowImage});
+    height: 375px;
+    width: 500px
+  }
+`
+
 
 const Projects = () => ( 
   <SectionContainer> 
@@ -110,7 +128,8 @@ const Projects = () => (
         <ProjectCard>
           
           <H3 colH3>{project.name}</H3>
-          <img src={project.image} alt={project.name} />
+          {/*<img src={project.image} alt={project.name} />*/}
+          <ProjectImage rowImage={project.image} colImage={project.colImage}/>
           <article>
             <H3 rowH3>{project.name}</H3>
             <StyledP>{project.description}</StyledP>
