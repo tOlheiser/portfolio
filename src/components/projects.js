@@ -66,8 +66,19 @@ const ProjectCard = styled.div`
     margin: 0 30px;
     margin-bottom: 4em;
 
+    /* Give article spacing from img and reverse flex direction
+    every odd row. */
     &:nth-child(odd) {
       flex-direction: row-reverse;
+      article {
+        margin-right: 50px;
+      }
+    }
+
+    &:nth-child(even) {
+      article {
+        margin-left: 50px;
+      }
     }
 
     article {
